@@ -1,0 +1,92 @@
+.CadastroUsuario{
+    width: 432px;
+    height: 504px;
+    background-color: #60FF8D;
+    border-radius: 18px;    
+    margin: 1%;   
+
+}
+
+.CUdName, .CUdInput, .CUdButton, .CUdLogin{
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    width: 100%;
+    height: 50px;
+    margin-bottom: 4%;
+}
+.CUdName{
+    margin-top: 4%;
+    margin-bottom: 8%;
+}
+.CUpName{
+    font-size: 30px;
+}
+.CUinput, .CUbutton{
+    width: 75%;
+    height: 100%;
+    border: none;
+    box-sizing: border-box;
+}
+.CUinput{
+    border-radius: 18px;
+    padding: 0px;
+    padding-left: 21px;
+    padding-top: 18;
+    font-size: 20px;
+}
+.CUdButton{
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+.CUbutton{
+    border-radius: 36px;
+    background-color: #D08B40;
+    font-size: 30px;
+}
+.CUbutton:hover{
+    background-color: #C07B30;
+}
+.CUpLogin{
+    font-size: 18px;
+}
+.CUddLine{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 8%;
+}
+.CUdLine{
+    width: 75%;
+    height: 1px;
+    background-color: darkgrey;
+}
+@media screen and (max-width:450px) {
+    .CadastroUsuario{
+        width: 390px;
+    }
+}
+@media screen and (max-width:400px) {
+    .CadastroUsuario{
+        width: 340px;
+    }
+    .LdRegistrar .Lbutton{
+        width: 75%;
+    }
+}
+@media screen and (max-width:350px) {
+    .CadastroUsuario{
+        width: 290px;
+    }
+    .LdRegistrar .Lbutton{
+        width: 75%;
+    }
+}
+@media screen and (max-width:300px) {
+    .CadastroUsuario{
+        width: 250px;
+    }
+    .LdRegistrar .Lbutton{
+        width: 75%;
+    }
+}

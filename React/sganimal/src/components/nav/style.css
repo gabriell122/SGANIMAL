@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,400&display=swap');
+
+
+.Nav{
+    width: 100%;
+    height: 10vh;
+    min-height: 72px;
+    position: sticky ;
+    top: 0;
+    background-color: #60FF8D;    
+}
+.NdFlex{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.Nborder{
+    width: 100%;
+    height: 1px;
+    background-color: black;
+}
+.Nd1, .Nd2{
+    width: 50%;
+    height: 100%;
+    display: flex;    
+}
+.Nname, .NnameFull{
+    margin-left: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+}
+.NpName{
+    font-size: 20px;
+    font-family: 'Comic Neue', 'Arial', 'sans-serif';
+}
+.NnameFull{
+    width: 70%;
+}
+.NpNameFull{
+    font-size: 16px;
+}
+.Nd2{
+    align-items: center;
+    justify-content: center
+
+}
+.NLogin, .NSobre, .NRegistrar{
+    width: 20%;
+    height: 50%;
+    margin-right: 4%;
+
+}
+.NRegistrar{
+    width: 30%;
+}
+.Nbutton{
+    width: 100%;
+    height: 100%;
+    background-color: #D08B40;
+    border-radius: 14px;
+    border: none;
+}
+.Nbutton:hover{
+    background-color: #C07B30;
+}
+
+@media screen and (max-width:800px){
+    .NnameFull{
+        display: none;
+    }
+    .Nd1{
+        width: 30%;
+    }
+    .Nname{
+        width: 100%;
+    }
+    .Nd2{
+        width: 70%;
+    }
+    .NLogin{
+        min-width: 108px;
+    }
+    .NRegistrar{
+        min-width: 162px;
+    }
+}
+@media screen and (max-width:600px){
+    .NSobre{
+        display: none;
+    }
+}
+@media screen and (max-width:400px) {
+    .NnameFull{
+        display: none;
+    }
+    .NdFlex{
+        flex-direction: column;
+    }
+    .Nav{
+        height: 20vh;
+        display: block;
+    }
+    .Nd1{
+        width: 100%;
+        height: 25%;
+    }
+    .Nd2{
+        flex-direction: column;
+        height: 75%;
+        width: 100%;
+    }
+    .Nname {
+        margin: 0;
+    }
+    .NLogin, .NSobre, .NRegistrar{
+        height: 30%;
+        margin-bottom: 1%;
+        width: 80%;
+        min-width: 150px;
+        max-width: 250px;
+    }
+    .NSobre{
+        display: block;
+    }
+}
