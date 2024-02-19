@@ -5,7 +5,7 @@ import Home from "./page/home/index.jsx";
 import Animal from "./page/animal/index.jsx"
 import "./reset.css"
 function App() {
-  const [ user , setUser] = useState("oi")
+  const [ user , setUser] = useState("")
   return (
     <BrowserRouter>
       <Routes>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import Animais from "../../components/animais";
 import CadastroAnimal from "../../components/cadastroAnimal";
 import Nav from "../../components/nav";
 import "./style.css";
@@ -32,10 +33,8 @@ const Animal = ({ user, setUser }) => {
                 <div className="AAnimal">
                     {
                         from == "Cadastrar"
-                            ? <CadastroAnimal />
-                            : <div>
-                                a
-                            </div>
+                            ? <CadastroAnimal user = { user }/>
+                            : <Animais />
                     }
                 </div>
                 <div>
