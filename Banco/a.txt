@@ -1,0 +1,28 @@
+Eu to com sono de mais aaaa	
+
+
+Sga{
+  User{
+    cadastrar animal - api(ok)
+    ver seus aniais - 0
+    gerenciar seus animais - 0
+    ver animais para adotar - 0
+    colocar animais para adotar - 0
+    adotar animais - 0
+    
+  }
+
+  {
+  entrar - ok
+  sair - ok
+  cadastrar-se - api(ok) react(off)
+  }
+
+}
+
+
+Banco - ok
+
+Api - dev
+
+react - dev

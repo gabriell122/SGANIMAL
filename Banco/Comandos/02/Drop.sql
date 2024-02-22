@@ -1,0 +1,1 @@
+DROP TABLE usuariosAnimais, animais, usuarios, enderecos;
