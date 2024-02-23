@@ -9,13 +9,20 @@ router.post("/login", usuarios.login);
 router.post("/cadastrarUsuario", usuarios.cadastrarUsuario);
 router.post("/cadastrarAnimal" , animal.cadastrarAnimal);
 router.get("/seusAnimais/:dono", animal.seusAnimais);
+router.put("/editarAnimais", animal.editarAnimais);
+router.get("/animaisAdocao", animal.animaisAdocao);
+router.patch("/animaisDoacao", animal.animaisDoacao);
+router.patch("/animaisAdotar", animal.animaisAdotar);
+
+
+
+
 
 //vendo
-router.post("/editarAnima", animal.editarAnimais);
+
 
 
 //Revisar
-router.get("/listarAnimais" , animal.animais);
 
 
 module.exports = router;
