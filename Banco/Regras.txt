@@ -1,0 +1,6 @@
+animais.ani_status = 0 {
+    Animal tem dono
+}
+animais.ani_status = 1 {
+    Animal esta para Adoção
+}

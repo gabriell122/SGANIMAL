@@ -1,34 +1,32 @@
 .Login{
+    margin-top: 10px;
     width: 432px;
     height: 504px;
     background-color: #60FF8D;
     border-radius: 18px; 
-    margin: 1%;   
 }
-.LdTop{
-    width: 100%;
-    height: 60%;
-    padding-top: 8%;
-    box-sizing: border-box;
+.LdMain{
+    flex-direction: column;
+    height: 100%;
 }
-.LdBot{
-    width: 100%;
-    height: 40%;
-}
-.LdEmail, .LdSenha, .LdEntrar, .LdEsqueceuSenha, .LdRegistrar, .LddLine{
-    width: 100%;
+.LdTitle, .LdInput, .LdButton, .LdForm, .LdMain{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
-.LdEmail, .LdEntrar, .LdSenha{
-    margin-bottom: 8%;
-    height: 18%;
+.LdTitle{
+    height: 36px;
+    margin-top: 36px;
+    margin-bottom: 36px;
+    font-size: 30px;
 }
-.LdSenha{
-    margin-bottom: 12%;
+.LdForm{
+    width: 100%;
+    height: 252px;
+    margin-bottom: 54px;
+    flex-direction: column;    
 }
-
 .Linput{
     width: 75%;
     height: 54px;
@@ -38,68 +36,14 @@
     padding-left: 21px;
     padding-top: 18;
     font-size: 20px;
-}
-.Lbutton{
-    width: 75%;
-    height: 54px;
-    border: none;
-    box-sizing: border-box;
-    font-size: 30px;
-    border-radius: 36px;
-    background-color: #D08B40;
-}
-.Lbutton:hover{
-    background-color: #C07B30;
-}
-.LdEsqueceuSenha{
-    height: 18%;
-    margin-bottom: 9%;
-}
-.LpEsqueceuSenha{
-    font-size: 18px;
-}
-.LddLine{
-    margin-bottom: 9%;
-}
-.LdLine{
-    width: 75%;
-    height: 1px;
-    background-color: darkgrey;
-}
-.LdRegistrar{
-    height: 54px;
-}
-.LdRegistrar .Lbutton{
-    width: 50%;
+    margin-bottom: 36px;
 }
 
-
-@media screen and (max-width:450px) {
-    .Login{
-        width: 390px;
-    }
+.LdButton.Entrar{
+    width: 75%;
+    height: 54px;
 }
-@media screen and (max-width:400px) {
-    .Login{
-        width: 340px;
-    }
-    .LdRegistrar .Lbutton{
-        width: 75%;
-    }
-}
-@media screen and (max-width:350px) {
-    .Login{
-        width: 290px;
-    }
-    .LdRegistrar .Lbutton{
-        width: 75%;
-    }
-}
-@media screen and (max-width:300px) {
-    .Login{
-        width: 250px;
-    }
-    .LdRegistrar .Lbutton{
-        width: 75%;
-    }
+.LdButton.Registrar{
+    width: 62.5%;
+    height: 54px;
 }

@@ -1,0 +1,13 @@
+.BBButton{
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-sizing: border-box;
+    font-size: 30px;
+    border-radius: 36px;
+    background-color: #D08B40;
+    
+}
+.BBButton:hover{
+    background-color: #C07B30;
+}

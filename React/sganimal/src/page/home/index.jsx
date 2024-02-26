@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import CadastroUsuario from "../../components/cadastroUsuario";
-import Login from "../../components/login";
+import Login from "../../components/Login";
 import Nav from "../../components/nav";
 import "./style.css"
 

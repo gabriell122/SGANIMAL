@@ -34,7 +34,7 @@ CREATE TABLE animais(
 CREATE TABLE usuariosAnimais(
     usu_id INT NOT NULL,
     ani_id INT NOT NULL,
-    usa_status INT DEFAULT 0,
+    usa_status TINYINT DEFAULT 0,
     usa_data DATE NOT NULL,
     FOREIGN KEY (usu_id) REFERENCES usuarios(usu_id),
     FOREIGN KEY (ani_id) REFERENCES animais(ani_id)

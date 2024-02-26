@@ -3,19 +3,18 @@ Eu to com sono de mais aaaa
 
 Sga{
   User{
-    cadastrar animal - api(ok)
-    ver seus aniais - 0
-    gerenciar seus animais - 0
-    ver animais para adotar - 0
-    colocar animais para adotar - 0
-    adotar animais - 0
-    
+    cadastrar animal - api(ok) figma(ok) react(off)
+    ver seus aniais - api(ok) figma(ok) react(off)
+    gerenciar seus animais - api(ok) figma(ok) react(off)
+    ver animais para adotar - api(ok) figma(ok) react(off)
+    colocar animais para adotar - api(ok) figma(ok) react(off)
+    adotar animais - api(ok) figma(ok) react(off)
   }
 
   {
   entrar - ok
   sair - ok
-  cadastrar-se - api(ok) react(off)
+  cadastrar-se - api(ok) figma(ok) react(off) => ( Cadastro em duas etapas[nome, email, senha],[telefone, nascimento, end[rua, num, bairro, cidade, estado]] )
   }
 
 }
@@ -23,6 +22,6 @@ Sga{
 
 Banco - ok
 
-Api - dev
+Api - ok
 
 react - dev

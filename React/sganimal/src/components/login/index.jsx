@@ -1,8 +1,10 @@
+import "./style.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Api from "../../service/api/index";
-import "./style.css";
-const Login = ( {setForm , setUser} ) => {
+import Api from "../../service/api/index.js";
+import BasicButton from "../Buttons/Basic";
+const Login = ({setForm , setUser})=>{ 
+    
     const [ email, setEmail ] = useState("");
     const [ pass , setPass ] = useState("");
     const navigate = useNavigate()
@@ -20,51 +22,28 @@ const Login = ( {setForm , setUser} ) => {
             navigate("/animal");    
         }    
     }
-    
-    return (
+
+    return(
         <div className="Login">
-            <div className="LdTop">
-                <div className="LdEmail">
-                    <input 
-                        type="text" 
-                        placeholder="Email" 
-                        className="Linput" 
-                        onChange={(e)=>{setEmail(e.target.value)}}
-                    />
+            <div className="LdMain">
+                <div className="LdTitle">
+                    <p className="LpTitle">
+                        Entrar no SGA
+                    </p>
                 </div>
-                <div className="LdSenha">
-                    <input 
-                        type="password" 
-                        placeholder="Senha" 
-                        className="Linput" 
-                        onChange={(e)=>{setPass(e.target.value)}}
-                    />
+                <div className="LdForm">
+                    <div className="LdInput">
+                        <input type="text" className="Linput" placeholder="Email" />
+                    </div>
+                    <div className="LdInput">
+                        <input type="password" className="Linput" placeholder="Senha"/>
+                    </div>
+                    <div className="LdButton Entrar">
+                        <BasicButton name="Entrar"/>
+                    </div>
                 </div>
-                <div className = "LdEntrar">
-                    <input 
-                        type="button" 
-                        value="Entrar" 
-                        className="Lbutton"
-                        onClick={()=>{Logar()}}
-                    />
-                </div>
-            </div>
-            <div className = "LdBot">
-                <div className = "LdEsqueceuSenha">
-                    <a href="#">
-                        <p className="LpEsqueceuSenha">Esqueceu a Senha?</p>
-                    </a>
-                </div>
-                <div className="LddLine">
-                    <div className = "LdLine"/>
-                </div>
-                <div className = "LdRegistrar">
-                    <input 
-                        type="button" 
-                        value="Registrar" 
-                        className="Lbutton" 
-                        onClick={()=>{setForm("Cadastrar")}}
-                    />
+                <div className="LdButton Registrar ">
+                    <BasicButton name="Registrar-se"/>
                 </div>
             </div>
         </div>
