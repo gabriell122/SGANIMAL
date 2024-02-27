@@ -1,7 +1,7 @@
 import "./style.css";
-const BasicButton = ({name , }) =>{
+const BasicButton = ({name , action }) =>{
     return(
-        <input type="button" value={name} className="BBButton"/>
+        <input type="button" value={name} className="BBButton" onClick={action}/>
     )
 }
 export default BasicButton

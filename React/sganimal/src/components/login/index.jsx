@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Api from "../../service/api/index.js";
 import BasicButton from "../Buttons/Basic";
+import BasicInput from "../Inputs/basicInput";
 const Login = ({setForm , setUser})=>{ 
     
     const [ email, setEmail ] = useState("");
@@ -15,12 +16,13 @@ const Login = ({setForm , setUser})=>{
             email: email,
             pass: pass
         }
-        const res = await Api.post( "/login", data );
-        console.log(res.data);    
-        if (res.data.confirma) {
-            setUser(res.data.data);
-            navigate("/animal");    
-        }    
+        console.log(data);
+        // const res = await Api.post( "/login", data );
+        // console.log(res.data);    
+        // if (res.data.confirma) {
+        //     setUser(res.data.data);
+        //     navigate("/animal");    
+        // }    
     }
 
     return(
@@ -33,13 +35,24 @@ const Login = ({setForm , setUser})=>{
                 </div>
                 <div className="LdForm">
                     <div className="LdInput">
-                        <input type="text" className="Linput" placeholder="Email" />
+                        <BasicInput 
+                            name= "Email" 
+                            type= "email" 
+                            set= {setEmail}
+                        />
                     </div>
                     <div className="LdInput">
-                        <input type="password" className="Linput" placeholder="Senha"/>
+                        <BasicInput 
+                            name= "Senha" 
+                            type= "password" 
+                            set= {setPass}
+                        />
                     </div>
                     <div className="LdButton Entrar">
-                        <BasicButton name="Entrar"/>
+                        <BasicButton 
+                            name="Entrar" 
+                            action = {Logar}
+                        />
                     </div>
                 </div>
                 <div className="LdButton Registrar ">

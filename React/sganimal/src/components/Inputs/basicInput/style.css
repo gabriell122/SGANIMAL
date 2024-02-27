@@ -1,0 +1,11 @@
+.BInput{
+    width: 75%;
+    height: 54px;
+    border-radius: 18px;
+    border: none;
+    box-sizing: border-box;
+    padding-left: 21px;
+    padding-top: 18;
+    font-size: 20px;
+    margin-bottom: 36px;
+}
