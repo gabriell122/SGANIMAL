@@ -1,0 +1,15 @@
+.CadastroUsuario2{
+    width: 756px;
+    height: 432px;
+    background-color: #60FF8D;
+    border-radius: 18px;    
+    margin: 1%; 
+}
+.CU2dLine{
+    display: flex;
+    flex-direction: row;
+    
+}
+.CU2dButton{
+    
+}

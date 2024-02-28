@@ -7,7 +7,6 @@
 }
 .LdMain{
     flex-direction: column;
-    height: 100%;
 }
 .LdTitle, .LdInput, .LdButton, .LdForm, .LdMain{
     display: flex;

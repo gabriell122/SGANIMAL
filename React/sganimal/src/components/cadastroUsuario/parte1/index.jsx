@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Api from "../../service/api/index";
+import Api from "../../../service/api/index";
 import "./style.css";
 
 const CadastroUsuario = ( {setForm} ,)=>{
@@ -14,8 +14,9 @@ const CadastroUsuario = ( {setForm} ,)=>{
             pass: pass,
             nome: nome
         }
-        const res = await Api.post( "/cadastrar", data )
-        console.log(res.data);
+        console.log(data);
+        // const res = await Api.post( "/cadastrar", data )
+        // console.log(res.data);
     }
 
     return(
@@ -52,7 +53,7 @@ const CadastroUsuario = ( {setForm} ,)=>{
             <div className="CUdButton">
                 <input 
                 type="button" 
-                value="Continuar" 
+                value="Cadastrar" 
                 className="CUbutton"
                 onClick={()=>{Cadastrar()}}
             />

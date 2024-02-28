@@ -3,19 +3,19 @@ import Api from "../../service/api";
 import "./style.css";
 const Animais = () => {
     const [animais, setAnimais] = useState("");
-    useEffect(
-        () => {
-            const data = async () => {
-                try {
-                    const res = await Api.get("/listar");
-                    setAnimais(res.data.data);
-                } catch (err) {
-                    console.log(err);
-                }
-            }
-            data()
-        }, []
-    )
+    // useEffect(
+    //     () => {
+    //         const data = async () => {
+    //             try {
+    //                 const res = await Api.get("/listar");
+    //                 setAnimais(res.data.data);
+    //             } catch (err) {
+    //                 console.log(err);
+    //             }
+    //         }
+    //         data()
+    //     }, []
+    // )
 
     return (
         <div className="Animais">

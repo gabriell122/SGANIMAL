@@ -14,12 +14,13 @@ const CadastroAnimal = ( {user}) => {
             "nasc": aniNasc, 
             "especie": aniEspecie
         }
-        try {
-            const res = await Api.post("/cadastrarAnimal",data);
-            console.log(res);
-        } catch (error) {
-            console.log(error);
-        }
+        console.log(data);
+        // try {
+        //     const res = await Api.post("/cadastrarAnimal",data);
+        //     console.log(res);
+        // } catch (error) {
+        //     console.log(error);
+        // }
     }
     return(
         <div className="CadastroAnimal">
