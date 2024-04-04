@@ -1,0 +1,64 @@
+/* Main css */
+.Login {
+    display: block;
+    width: 432px;
+    height: 504px;
+    background-color: #60FF8D;
+    border-radius: 18px;
+}
+
+/* Block css */
+
+.LdTitle,
+.LdForm,
+.LdButtonCadastrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.LdTitle {
+    height: 108px;
+}
+
+.LdForm {
+    height: 252px;
+}
+
+/* Componets css */
+.Ltitle {
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.LdInputs {
+    width: 324px;
+    height: 54px;
+}
+.LdInputs.t36{
+    margin-top: 36px;
+}
+.LdButtonEntrar {
+    margin-top: 54px;
+    width: 324px;
+    height: 54px;
+}
+.LdButtonCadastrar{
+    margin-top: 54px;
+}
+.LdButtonCadastrar .BasicButton {
+    width: 270px;
+    height: 54px;
+}
+
+/* Ajustes */
+.LdInputs .BasicInput{
+    font-size: 20px;
+}
+.LdButtonEntrar .BasicButton,
+.LdButtonCadastrar .BasicButton {
+    font-size: 30px;
+}

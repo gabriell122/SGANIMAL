@@ -5,7 +5,6 @@ CREATE TABLE enderecos(
     end_bairo VARCHAR(128) NOT NULL,
     end_cidade VARCHAR(128) NOT NULL,
     end_estado VARCHAR(128) NOT NULL,
-    end_cep VARCHAR(8) NOT NULL
 
 );
 

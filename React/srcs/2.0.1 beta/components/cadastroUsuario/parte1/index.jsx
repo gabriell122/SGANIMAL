@@ -7,7 +7,6 @@ const CadastroUsuario = ( {setForm} ,)=>{
     const [ email, setEmail ] = useState("");
     const [ pass , setPass ] = useState("");
     const [ nome, setNome ] = useState("");
-
     const Cadastrar = async () => {
         const data = {
             email: email,
@@ -15,6 +14,7 @@ const CadastroUsuario = ( {setForm} ,)=>{
             nome: nome
         }
         console.log(data);
+
         // const res = await Api.post( "/cadastrar", data )
         // console.log(res.data);
     }

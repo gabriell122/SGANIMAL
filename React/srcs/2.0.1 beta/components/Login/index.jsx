@@ -41,7 +41,7 @@ const Login = ({setForm , setUser})=>{
                             set= {setEmail}
                         />
                     </div>
-                    <div className="LdInput">
+                    <div className="LdInput p2">
                         <BasicInput 
                             name= "Senha" 
                             type= "password" 

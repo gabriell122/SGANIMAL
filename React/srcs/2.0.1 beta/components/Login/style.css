@@ -14,6 +14,13 @@
     justify-content: center;
     width: 100%;
 }
+.LdInput{
+    width: 75%;
+    height: 54px;
+}
+.LdInput.p2{
+ margin-top: 36px;
+}
 .LdTitle{
     height: 36px;
     margin-top: 36px;
@@ -26,17 +33,7 @@
     margin-bottom: 54px;
     flex-direction: column;    
 }
-.Linput{
-    width: 75%;
-    height: 54px;
-    border-radius: 18px;
-    border: none;
-    box-sizing: border-box;
-    padding-left: 21px;
-    padding-top: 18;
-    font-size: 20px;
-    margin-bottom: 36px;
-}
+
 
 .LdButton.Entrar{
     width: 75%;
@@ -45,4 +42,7 @@
 .LdButton.Registrar{
     width: 62.5%;
     height: 54px;
+}
+.LdInput.p2{
+    margin-bottom: 54px;
 }

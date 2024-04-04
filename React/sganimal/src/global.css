@@ -1,0 +1,983 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,400&display=swap');
+
+/* Root */
+
+:root {
+    --green-1: #60FF8D;
+
+    --brown-1: #D08B40;
+    --brown-2: #C07B30;
+
+    --font-1: 2.25rem;
+    --font-2: 1.875rem;
+    --font-3: 1.25rem;
+    --font-4: 0.8rem;
+    --font-5: 1.5625rem;
+}
+
+/* Div */
+
+.Nav {
+    width: 100%;
+    height: 50px;
+    background-color: var(--green-1);
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.NdAll {
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.NdLeft,
+.NdAll,
+.NdRight,
+.NdButton {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+}
+
+.NdLeft,
+.NdRight {
+    width: 50%;
+}
+
+.NdRight {
+    justify-content: end;
+}
+
+/* Text */
+
+.NdTitle {
+    width: 30%;
+    margin-left: 54px;
+}
+
+.NdName {
+    width: 70%;
+    padding-left: 36px;
+}
+
+.NpTitle {
+    font-size: var(--font-1);
+    font-family: 'Comic Neue', 'Arial', 'sans-serif';
+}
+
+.NpName {
+    font-size: var(--font-3);
+}
+
+/* Buttons */
+
+.NdButton {
+    min-width: 108px;
+    margin-right: 20px;
+}
+
+.NdButton.Registrar {
+    min-width: 162px;
+}
+
+.NiButton {
+    width: 100%;
+    height: 36px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 36px;
+    background-color: var(--brown-1);
+    font-size: var(--font-3);
+}
+
+.NiButton:hover {
+    background-color: var(--brown-2);
+}
+
+.NdRLast {
+    display: none;
+}
+
+@media screen and (max-width: 864px) {
+    .NdName {
+        display: none;
+    }
+
+    .NdLeft {
+        width: 30%;
+    }
+
+    .NdTitle {
+        width: 100%;
+        margin-left: 20%;
+    }
+
+    .NdRight {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 648px) {
+    .NdName {
+        display: none;
+    }
+
+    .NdRight {
+        display: none;
+    }
+
+    .NdLeft {
+        width: 80%;
+        justify-content: center;
+    }
+
+    .NdTitle {
+        width: 100%;
+        margin: 0;
+    }
+
+    .NpTitle {
+        display: flex;
+        justify-content: center;
+    }
+
+    .NdRLast {
+        width: 20%;
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .fas.fa-envelope {
+        font-size: var(--font-2);
+    }
+}
+
+/* main */
+
+.Main {
+    margin-top: 50px;
+    padding: 1%;
+}
+.Main.user{
+    margin-top: 0;
+}
+
+
+/* Login */
+.Login {
+    display: block;
+    width: 432px;
+    height: 504px;
+    background-color: var(--green-1);
+    border-radius: 18px;
+}
+
+.LdTitle {
+    width: 100%;
+    height: 36px;
+    padding-top: 36px;
+    margin-bottom: 36px;
+}
+
+.LpTitle {
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.LdInputs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.LInput {
+    width: 75%;
+    height: 54px;
+    border-radius: 18px;
+    border: none;
+    box-sizing: border-box;
+    padding-left: 21px;
+    font-size: var(--font-3);
+    margin-bottom: 36px;
+}
+
+.LdButton {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 188px;
+}
+
+.LButton {
+    width: 75%;
+    height: 54px;
+    border: none;
+    box-sizing: border-box;
+    font-size: var(--font-2);
+    border-radius: 36px;
+    background-color: var(--brown-1);
+    margin-bottom: 54px;
+
+}
+
+.LButton:hover {
+    background-color: var(--brown-2);
+}
+
+.LButton.registrar {
+    width: 54%;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 500px) {
+    .Login {
+        width: 90%;
+    }
+}
+
+/* Fexamento login */
+
+/* CadastrarUsuario */
+.CadastrarUsuario {
+    display: block;
+    width: 432px;
+    height: 504px;
+    background-color: var(--green-1);
+    border-radius: 18px;
+}
+
+.CudTitle {
+
+    width: 100%;
+    height: 36px;
+    padding-top: 18px;
+    margin-bottom: 36px;
+}
+
+.CupTitle {
+    text-align: center;
+    font-size: var(--font-2);
+}
+
+.CudInputs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.CuInput {
+    width: 75%;
+    height: 54px;
+    border-radius: 18px;
+    border: none;
+    box-sizing: border-box;
+    padding-left: 21px;
+    font-size: var(--font-3);
+    margin-bottom: 18px;
+}
+
+.CudButtons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 180px;
+}
+
+.CuButton.cadastrar {
+    width: 75%;
+    height: 54px;
+    border: none;
+    box-sizing: border-box;
+    font-size: var(--font-2);
+    border-radius: 36px;
+    background-color: var(--brown-1);
+    margin-bottom: 35px;
+}
+
+.CuButton.cadastrar:hover {
+    background-color: var(--brown-2);
+}
+
+.CudLine {
+    width: 75%;
+    height: 1px;
+    background-color: #D9D9D9;
+    margin-bottom: 18px;
+}
+
+.CudPLogin {
+    width: 100%;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CupRegistrar {
+    color: #0000FF;
+    font-size: var(--font-3);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+    .CadastrarUsuario {
+        width: 90%;
+    }
+}
+
+/* Fexamento CadastrarUsuario */
+
+/* ConcluindoCadastroUsuario */
+
+.ConcluindoCadastro {
+    width: 756px;
+    height: 432px;
+    display: block;
+    background-color: var(--green-1);
+    border-radius: 18px;
+}
+
+.CCdTitle,
+.CCdButtons,
+.CCdInputs,
+.CCdLine {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CCdTitle {
+    width: 100%;
+    height: 36px;
+    padding-top: 36px;
+    margin-bottom: 36px;
+}
+
+.CCpTitle {
+    font-size: var(--font-2);
+}
+
+.CCdLine {
+    width: 100%;
+    height: 36px;
+}
+
+.CCdLine.top {
+    margin-bottom: 36px;
+}
+
+.CCdInputs {
+    flex-direction: column;
+    width: 100%;
+    height: 180px;
+    margin-bottom: 54px;
+}
+
+.CCinput {
+    width: 216px;
+    height: 100%;
+    border-radius: 18px;
+    border: none;
+    box-sizing: border-box;
+    padding-left: 21px;
+    font-size: var(--font-3);
+}
+
+.CCdDN {
+    width: 216px;
+    height: 100%;
+}
+
+.CCinput.s {
+    width: 162px;
+}
+
+.CCinput.b {
+    width: 378px;
+}
+
+.CCinput.lb {
+    margin-right: 54px;
+}
+
+.CCinput.ls {
+    margin-right: 27px;
+}
+
+.CCdButtons {
+    width: 100%;
+    height: 54px;
+    margin-bottom: 36px;
+}
+
+.CCbuttom {
+    width: 50%;
+    height: 100%;
+    border: none;
+    box-sizing: border-box;
+    font-size: var(--font-2);
+    border-radius: 36px;
+    background-color: var(--brown-1);
+}
+
+.CCbuttom:hover {
+    background-color: var(--brown-2);
+}
+
+.CCpDN {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .ConcluindoCadastro {
+        width: 90%;
+        height: 738px;
+    }
+
+    .CCdInputs {
+        height: 522px;
+        margin-bottom: 18px;
+    }
+
+    .CCdLine {
+        flex-direction: column;
+    }
+
+    .CCdLine.top {
+        margin: 0px;
+    }
+
+    .CCdLine.d {
+        height: 144px;
+    }
+
+    .CCdLine.t {
+        height: 216px;
+    }
+
+    .CCdLine.dn {
+        height: 162px;
+    }
+
+    .CCinput.s,
+    .CCinput.b,
+    .CCinput.lb,
+    .CCinput.ls,
+    .CCinput {
+        margin: 0px;
+        width: 75%;
+        height: 36px;
+        margin-bottom: 36px;
+    }
+
+    .CCpDN {
+        display: block;
+        width: 75%;
+        height: 18px;
+        padding-left: 21px;
+        box-sizing: border-box;
+        font-size: var(--font-4);
+    }
+
+    .CCdDN {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 54px;
+        margin-bottom: 36px;
+    }
+
+    .CCinput.dn {
+        height: 36px;
+        margin-bottom: 0px;
+    }
+}
+
+/* Fexamento ConcluindoCadastroUsuario */
+
+
+
+/* CadastroAninal */
+.CadastroAninal {
+    width: 752px;
+    height: 360px;
+    display: block;
+    background-color: var(--green-1);
+    border-radius: 18px;
+}
+
+.CAdTitle {
+    width: 100%;
+    padding-top: 36px;
+    height: 36px;
+}
+
+.CApTitle {
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-2);
+}
+
+.CAdLine {
+    width: 100%;
+    height: 36px;
+    margin-bottom: 36px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.CAdLine.DN {
+    display: flex;
+    height: 54px;
+    margin-top: 18px;
+    align-items: flex-end;
+}
+
+.CAinput,
+.CAselect {
+    width: 216px;
+    height: 100%;
+    border-radius: 18px;
+    border: none;
+    box-sizing: border-box;
+    padding-left: 21px;
+    font-size: var(--font-3);
+}
+
+.CAinput.DN {
+    height: 36px;
+}
+
+.CAinput.b {
+    width: 378px;
+    margin-right: 54px;
+}
+
+.CAselect.s {
+    width: 162px;
+}
+
+.CAinput.prs {
+    margin-right: 27px;
+}
+
+.CApDN {
+    padding-left: 21px;
+    font-size: var(--font-4);
+}
+
+.CAdButtons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 54px;
+    padding-top: 18px;
+    margin-bottom: 36px;
+}
+
+.CAbutton {
+    width: 50%;
+    height: 100%;
+    border: none;
+    box-sizing: border-box;
+    font-size: var(--font-2);
+    border-radius: 36px;
+    background-color: var(--brown-1);
+}
+
+.CAbutton:hover {
+    background-color: var(--brown-2);
+}
+
+@media screen and (max-width: 800px) {
+
+    .CadastroAninal {
+        height: 594px;
+        width: 90%;
+    }
+
+    .CAdInputs {
+        height: 378px;
+    }
+
+    .CAdLine {
+        flex-direction: column;
+        height: 216px;
+        margin-bottom: 0;
+        align-items: center;
+    }
+
+    .CAdLine.DN {
+        height: 162px;
+        align-items: center;
+    }
+
+    .CAinput.prs {
+        margin-right: 0;
+    }
+
+    .CAinput.b,
+    .CAinput,
+    .CAselect.s {
+        margin: 0px;
+        width: 75%;
+        height: 36px;
+        margin-bottom: 36px;
+    }
+
+    .CAinput.DN.n {
+        width: 100%;
+    }
+
+    .CAdDataInput {
+        width: 75%;
+    }
+}
+
+/* Fexamento CadastroAninal */
+
+
+/* EditarAnimal */
+
+.EditarAnimal {
+    width: 752px;
+    height: 360px;
+    display: block;
+    background-color: var(--green-1);
+    border-radius: 18px;
+}
+
+.EAdTitle {
+    width: 100%;
+    padding-top: 36px;
+    height: 36px;
+}
+
+.EApTitle {
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-2);
+}
+
+.EAdLine {
+    width: 100%;
+    height: 36px;
+    margin-bottom: 36px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.EAdLine.DN {
+    display: flex;
+    height: 54px;
+    margin-top: 18px;
+    align-items: flex-end;
+}
+
+.EAinput,
+.EAselect {
+    width: 216px;
+    height: 100%;
+    border-radius: 18px;
+    border: none;
+    box-sizing: border-box;
+    padding-left: 21px;
+    font-size: var(--font-3);
+}
+
+.EAinput.DN {
+    height: 36px;
+}
+
+.EAinput.b {
+    width: 378px;
+    margin-right: 54px;
+}
+
+.EAselect.s {
+    width: 162px;
+}
+
+.EAinput.prs {
+    margin-right: 27px;
+}
+
+.EApDN {
+    padding-left: 21px;
+    font-size: var(--font-4);
+}
+
+.EAdButtons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 54px;
+    padding-top: 18px;
+    margin-bottom: 36px;
+}
+
+.EAbutton {
+    width: 35%;
+    height: 100%;
+    border: none;
+    box-sizing: border-box;
+    font-size: var(--font-2);
+    border-radius: 36px;
+    background-color: var(--brown-1);
+}
+
+.EAbutton:hover {
+    background-color: var(--brown-2);
+}
+
+.EAbutton.r {
+    margin-right: 5%;
+}
+
+@media screen and (max-width: 800px) {
+
+    .EditarAnimal {
+        height: 576px;
+        width: 90%;
+    }
+
+    .EAdInputs {
+        height: 378px;
+    }
+
+    .EAdLine {
+        flex-direction: column;
+        height: 216px;
+        margin-bottom: 0;
+        align-items: center;
+    }
+
+    .EAdLine.DN {
+        height: 162px;
+        align-items: center;
+    }
+
+    .EAinput.prs {
+        margin-right: 0;
+    }
+
+    .EAinput.b,
+    .EAinput,
+    .EAselect.s {
+        margin: 0px;
+        width: 75%;
+        height: 36px;
+        margin-bottom: 36px;
+    }
+
+    .EAinput.DN.n {
+        width: 100%;
+    }
+
+    .EAdDataInput {
+        width: 75%;
+    }
+
+    .EAdButtons {
+        height: 54px;
+        align-items: center;
+    }
+
+}
+
+/* Fexamento EditarAnimal */
+
+/* AdotarAnimal */
+
+.AdotarAnimal {
+    width: 758px;
+    height: 630px;
+    background-color: var(--green-1);
+    display: block;
+    border-radius: 18px;
+}
+
+.AAdTile {
+    width: 100%;
+    height: 36px;
+    padding-top: 36px;
+    margin-bottom: 36px;
+}
+
+.AApTitle {
+    height: 100%;
+    text-align: center;
+    font-size: var(--font-2);
+}
+
+.AAdAnimal {
+    width: 100%;
+    height: 360px;
+
+}
+
+.AAdAnimal.mb {
+    margin-bottom: 54px;
+}
+
+.AAdDono {
+    height: 108px;
+}
+
+.AAdATitle {
+    width: 100%;
+    height: 36px;
+}
+
+.AApATitle {
+    font-size: var(--font-5);
+    padding-left: 12.5%;
+}
+
+.AAdAInputs {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 36px;
+}
+
+.AAdALine {
+    width: 100%;
+    height: 72px;
+    margin-bottom: 36px;
+    display: flex;
+    justify-content: center;
+}
+
+.AAdAInput {
+    width: 216px;
+    height: 72px;
+}
+
+.AAdAName {
+    height: 50%;
+    padding-left: 21px;
+    font-size: var(--font-3);
+    display: flex;
+    align-items: flex-end;
+}
+
+.AAAInput {
+    width: 100%;
+    height: 50%;
+    border-radius: 18px;
+    border: none;
+    box-sizing: border-box;
+    padding-left: 21px;
+    font-size: var(--font-3);
+    background-color: white;
+    color: black;
+}
+
+.AAdAInput.wb {
+    width: 378px;
+}
+
+.AAdAInput.ws {
+    width: 162px;
+}
+
+.AAdAInput.wm {
+    width: 270px;
+}
+
+.AAdAInput.ms {
+    margin-right: 27px;
+}
+
+.AAdAInput.mb {
+    margin-right: 54px;
+}
+
+.AAdAInput.mbb {
+    margin-right: 108px;
+}
+
+.AAdButtons {
+    width: 100%;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 54px;
+}
+
+.AAbunttom {
+    width: 35%;
+    height: 100%;
+    border: none;
+    box-sizing: border-box;
+    font-size: var(--font-2);
+    border-radius: 36px;
+    background-color: var(--brown-1);
+
+}
+
+.AAbunttom:hover {
+    background-color: var(--brown-2);
+}
+
+.AAbunttom.mr {
+    margin-right: 5%;
+}
+
+@media screen and (max-width: 800px) {
+    .AdotarAnimal {
+        width: 90%;
+        height: 882px;
+    }
+
+    .AAdAnimal {
+        height: 612px;
+    }
+
+    .AAdAInputs {
+        height: 360px;
+    }
+
+    .AAdALine {
+        flex-direction: column;
+        align-items: center;
+        height: 144px;
+        margin-bottom: 0;
+    }
+
+    .AAdALine.l3 {
+        height: 216px;
+    }
+
+    .AAdAInput.wb,
+    .AAdAInput,
+    .AAdAInput.ms,
+    .AAdAInput.ws,
+    .AAdAInput.mbb,
+    .AAdAInput.wm {
+        width: 75%;
+        margin-right: 0;
+    }
+}
+
+/* Fexamento AdotarAnimal */

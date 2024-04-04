@@ -1,0 +1,55 @@
+.CadastroUsuario2{
+    width: 756px;
+    height: 432px;
+    background-color: #60FF8D;
+    border-radius: 18px;    
+    margin: 1%; 
+
+}
+.CU2dLine{
+    display: flex;
+    flex-direction: row;
+    height: 36px;
+    width: 100%;
+    margin-top:36px;
+}
+.CU2dButton{
+    width: 378px;
+    height: 54px;
+    margin-top: 54px;
+    
+}
+.CU2d35{
+    width: 378px;
+    height: 100%;
+    margin-left: 54px;
+}
+
+.CU2d2{
+    width: 216px;
+    height: 100%;
+    margin-left: 54px;
+}
+.CU2dTitle{
+    width: 100%;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-top: 36px;
+}
+.CU2dForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.CU2d2.p2{
+    margin-left: 27px;
+}
+.CU2d15{
+    width: 162px;
+    height: 100%;
+    margin-left: 27px;
+}
