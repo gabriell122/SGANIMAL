@@ -1,4 +1,24 @@
+import { useState } from "react"
+import handleChange from "../../../../service/change/handleChange"
+
 const EditarAnimal = () => {
+    const [animal , setAnimal] = useState({
+        nome:"",
+        data:"",
+        especie:"",
+        raca:"",
+        sexo:""
+    })
+
+    const EditarAnimal = ()=>{
+        console.log(animal)
+    }
+
+    const ExcluirAnimal = ()=>{
+        console.log("Animal excluido com susceso")
+    }
+
+
     return (
         <div className="EditarAnimal">
             <div className="EAdTitle">
@@ -8,16 +28,41 @@ const EditarAnimal = () => {
             </div>
             <div className="EAdInputs">
                 <div className="EAdLine DN">
-                    <input type="text" placeholder="Nome" className="EAinput DN b" />
+                    <input type="text" placeholder="Nome" className="EAinput DN b" 
+                        onChange={
+                            (e)=>{  handleChange( animal, setAnimal, "nome", e.target.value)}
+                        }
+                        value = {animal.nome}
+                    />
                     <div className="EAdDataInput">
                         <p className="EApDN">Data de nascimento</p>
-                        <input type="date" className="EAinput DN n" />
+                        <input type="date" className="EAinput DN n" 
+                            onChange={
+                                (e)=>{  handleChange( animal, setAnimal, "data", e.target.value)}
+                            }
+                            value = {animal.data}
+                        />
                     </div>
                 </div>
                 <div className="EAdLine">
-                    <input type="text" placeholder="Éspecie" className="EAinput n prs" />
-                    <input type="text" placeholder="Raça" className="EAinput n prs" />
-                    <select className="EAselect s" defaultValue="0">
+                    <input type="text" placeholder="Éspecie" className="EAinput n prs" 
+                        onChange={
+                            (e)=>{  handleChange( animal, setAnimal, "especie", e.target.value)}
+                        }
+                        value = {animal.especie}
+                    />
+                    <input type="text" placeholder="Raça" className="EAinput n prs" 
+                        onChange={
+                            (e)=>{  handleChange( animal, setAnimal, "raca", e.target.value)}
+                        }
+                        value = {animal.raca}
+                    />
+                    <select className="EAselect s" defaultValue="0"
+                        onChange={
+                            (e)=>{  handleChange( animal, setAnimal, "sexo", e.target.value)}
+                        }
+                        value = {animal.sexo}
+                    >
                         <option value="0" hidden>Sexo</option>
                         <option value="1">Macho</option>
                         <option value="2">Fêmea</option>
@@ -25,8 +70,12 @@ const EditarAnimal = () => {
                 </div>
             </div>
             <div className="EAdButtons">
-                <input type="button" value="Editar" className="EAbutton r" />
-                <input type="button" value="Excluir Animal" className="EAbutton" />
+                <input type="button" value="Editar" className="EAbutton r" 
+                    onClick={()=>{EditarAnimal()}}
+                />
+                <input type="button" value="Excluir Animal" className="EAbutton" 
+                    onClick={()=>{ExcluirAnimal()}}
+                />
             </div>
         </div>
     )
