@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+ul {
+    list-style: none;
+}
+
 /* Imports */
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,400&display=swap');
 
@@ -10,7 +14,8 @@
 
 :root {
     --green-1: #60FF8D;
-
+    --green-2: #4CAF50;
+    --green-2-hover: #2C9F30;
     --brown-1: #D08B40;
     --brown-2: #C07B30;
 
@@ -19,6 +24,81 @@
     --font-3: 1.25rem;
     --font-4: 0.8rem;
     --font-5: 1.5625rem;
+}
+
+.Navbar {
+    width: 100%;
+    height: 50px;
+    background-color: var(--green-1);
+    display: inline-flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.NhdLeft {
+    min-width: 162px;
+    height: 100%;
+}
+
+.NhdLogo,
+.NhdDropText {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.NhpLogo {
+    font-size: var(--font-1);
+}
+
+.NhdRight {
+    display: inline-flex;
+    min-width: 432px;
+    height: 100%;
+}
+
+.NhdDrop {
+    background-color: var(--green-2);
+    width: 50%;
+    height: 100%;
+}
+
+.NhdDropText {
+    font-size: var(--font-5);
+}
+
+.NhdDropItens {
+    display: none;
+    background-color: #f9f9f9;
+
+    width: 100%;
+    z-index: 2;
+    margin: 0;
+}
+
+.NhdDropItem {
+    width: 100%;
+    height: 36px;
+    font-size: var(--font-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.NhdDropItem:hover {
+    background-color: #aaaaaa;
+}
+
+.NhdDrop:hover {
+    background-color: var(--green-2-hover);
+}
+
+.NhdDrop:hover .NhdDropItens {
+    display: block;
+    width: 100%;
 }
 
 /* Div */
@@ -168,8 +248,9 @@
     margin-top: 50px;
     padding: 1%;
 }
-.Main.user{
-    margin-top: 0;
+
+.Main.user {
+    margin-top: 100px;
 }
 
 
