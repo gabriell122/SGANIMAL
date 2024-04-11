@@ -17,19 +17,14 @@ const NavHome = ({set}) => {
                     <ul className="NhdDropItens">
                         <li className="NhdDropItem" 
                             onClick={()=>{
-                                set("Ver")
+                                set("Seus")
                             }}
                         >Seus Animais</li>
                         <li className="NhdDropItem"
                             onClick={()=>{
-                                set("Cadastrar")
+                                set("Novo")
                             }}
                         >Novo Animal</li>
-                        <li className="NhdDropItem"
-                            onClick={()=>{
-                                set("Editar")
-                            }}
-                        >Editar Animal</li>
                     </ul>
                 </div>
                 <div className="NhdDrop">

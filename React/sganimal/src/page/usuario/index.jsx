@@ -1,28 +1,27 @@
 import { useState } from "react"
 import AdotarAnimal from "../../components/forms/adotarAnimal"
 import CadastroAnimal from "../../components/forms/cadastro/animal"
-import EditarAnimal from "../../components/forms/editar/animal"
 import NavHome from "../../components/nav/navHome"
+import SeusAnimais from "../../components/table/seusAnimais"
 
 const HomeUser = () => {
-    const [ form , setForm] = useState("Cadastrar")
+    const [ form , setForm] = useState("Seus")
     return (
         <div className="Body">
             <NavHome
                 set = {setForm}
             />
             <div className="Main user">
+            
                 {
-                    form == "Editar" 
-                    ?<EditarAnimal/>
-                    :form == "Cadastrar" 
+                    form == "Seus"
+                    ?<SeusAnimais/>
+                    :form == "Novo"
                     ?<CadastroAnimal/>
                     :form == "Adotar"
                     ?<AdotarAnimal/>
                     :""
                 }
-
-
             </div>
         </div>
     )

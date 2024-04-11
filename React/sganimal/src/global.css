@@ -745,6 +745,11 @@ ul {
     display: block;
     background-color: var(--green-1);
     border-radius: 18px;
+    z-index: 3;
+    position: fixed; /* Posicionamento fixo para cobrir a tela */
+    z-index: 1; /* Coloque o modal na parte superior */
+    left: 0;
+    top: 0;
 }
 
 .EAdTitle {
@@ -1062,3 +1067,67 @@ ul {
 }
 
 /* Fexamento AdotarAnimal */
+
+
+
+
+
+/* Seus Animais */
+
+.SAtable{
+    width: 758px;
+}
+
+.SAtHead{
+    color: white;
+    font-size: var(--font-3);
+    height: 54px;
+    background-color: var(--blue-1);
+}
+.SAtHead .SAtLine .SAtItem {
+    background-color: #3f51b5;
+}
+tr.SAtLine:nth-child(even) {
+    background-color: #f0f8ff;
+}
+
+tr.SAtLine:nth-child(odd) {
+    background-color: #e6e6fa;
+}
+.SAtLine td{
+    height: 36px;
+}
+
+.SAtItem{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding-left: 10px;
+}
+tbody .SAtLine:hover {
+    background-color: #add8e6;
+}
+.fas.fa-envelope {
+    font-size: var(--font-3);
+}
+.SAtIcon{
+    width: 20px;
+    height: 20px;
+    padding-right: 5px;
+}
+.SAtItem.w3{
+    width: 207px;
+}
+.SAtItem.w2{
+    width: 138px;
+}
+.SAtItem.w1{
+    width: 69px;
+}
+
+@media screen and (max-width: 800px) {
+    .SAtable{
+        width: 95%;
+    }
+}
+
+/* Fexamento seus animais */

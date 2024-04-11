@@ -1,7 +1,8 @@
+import { useEffect } from "react"
 import { useState } from "react"
 import handleChange from "../../../../service/change/handleChange"
 
-const EditarAnimal = () => {
+const EditarAnimal = (data) => {
     const [animal , setAnimal] = useState({
         nome:"",
         data:"",
@@ -9,6 +10,16 @@ const EditarAnimal = () => {
         raca:"",
         sexo:""
     })
+    useEffect(()=>{
+        setAnimal(prevAnimal => {
+            return {
+              ...prevAnimal, // Mantém os valores existentes em `animal`
+              ...data // Substitui os valores com os valores de `data`
+            };
+          })
+        console.log(animal);
+    }
+    ,[data])
 
     const EditarAnimal = ()=>{
         console.log(animal)
