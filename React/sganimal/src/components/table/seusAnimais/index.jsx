@@ -17,17 +17,17 @@ const SeusAnimais = () => {
         {
             id: 1,
             nome: "Amarelinho",
-            especie: "Amarelo",
-            raca: "Siamês",
-            data: "01-01-2000",
+            especie: "Gato",
+            raca: "Amarelo",
+            data: "2000-01-01",
             sexo: 1
         },
         {
             id: 2,
             nome: "Preta",
-            especie: "Carijo",
-            raca: "Siamês",
-            data: "01-01-2010",
+            especie: "Gato",
+            raca: "Carijo",
+            data: "2010-01-01",
             sexo: 0
         },
         {
@@ -35,7 +35,7 @@ const SeusAnimais = () => {
             nome: "Betove",
             especie: "Cachorro",
             raca: "Vira-Lata",
-            data: "01-01-2001",
+            data: "2000-01-02",
             sexo: 1
         },
     ]

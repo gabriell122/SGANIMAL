@@ -11,15 +11,17 @@ const EditarAnimal = (data) => {
         sexo:""
     })
     useEffect(()=>{
-        setAnimal(prevAnimal => {
-            return {
-              ...prevAnimal, // Mantém os valores existentes em `animal`
-              ...data // Substitui os valores com os valores de `data`
-            };
+        console.log(data);
+        setAnimal({
+                "nome": data.data.nome,
+                "data": data.data.data,
+                "especie": data.data.especie,
+                "raca": data.data.raca,
+                "sexo": data.data.sexo
           })
-        console.log(animal);
     }
-    ,[data])
+    ,[])
+
 
     const EditarAnimal = ()=>{
         console.log(animal)
@@ -72,7 +74,11 @@ const EditarAnimal = (data) => {
                         onChange={
                             (e)=>{  handleChange( animal, setAnimal, "sexo", e.target.value)}
                         }
-                        value = {animal.sexo}
+                        value = {
+                            animal.sexo == 0 
+                            ?2
+                            :1
+                        }
                     >
                         <option value="0" hidden>Sexo</option>
                         <option value="1">Macho</option>

@@ -749,7 +749,7 @@ ul {
     position: fixed; /* Posicionamento fixo para cobrir a tela */
     z-index: 1; /* Coloque o modal na parte superior */
     left: 0;
-    top: 0;
+    top: 350px;
 }
 
 .EAdTitle {
