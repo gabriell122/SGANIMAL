@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import Deletar from "../../../img/svg/delet.svg";
 import Donete from "../../../img/svg/donate.svg";
@@ -5,6 +6,7 @@ import Edit from "../../../img/svg/edit.svg";
 import EditarAnimal from "../../forms/editar/animal";
 
 const SeusAnimais = () => {
+
     const animal = [
         {
             id: 0,
@@ -39,8 +41,8 @@ const SeusAnimais = () => {
             sexo: 1
         },
     ]
-    const [modal , setModal] = useState("")
-    const [data , setData]= useState({})
+    const [modal, setModal] = useState("")
+    const [data, setData] = useState({})
     const calcularIdade = (dataNascimento) => {
         // Obtendo a data atual
         var dataAtual = new Date();
@@ -66,19 +68,18 @@ const SeusAnimais = () => {
         return idade;
     }
 
-    const ModalEditar = (animal)=>{
+    const OpenModal = (animal)=>{
+        const dModal = document.getElementById("dEditarAnimal")
+        dModal.showModal()
         setData(animal)
-        setModal("Editar")
     }
-
-
     const Animal = () => {
 
         return (
             animal.map(
                 animal => {
                     return (
-                        <tr className="SAtLine">
+                        <tr className="SAtLine" key={animal.id}>
                             <td className="SAtItem">
                                 {animal.nome}
                             </td>
@@ -102,7 +103,7 @@ const SeusAnimais = () => {
                             <td className="SAtItem">
                                 <img src={Edit} className="SAtIcon"
                                     onClick={() => {
-                                        ModalEditar(animal)
+                                        OpenModal(animal)
                                     }}
                                 />
                                 <img src={Deletar} className="SAtIcon"
@@ -125,38 +126,49 @@ const SeusAnimais = () => {
 
 
     return (
-        <table className="SAtable">
-            
-            <thead className="SAtHead">
-                <tr className="SAtLine">
-                    <th className="SAtItem w3" >
-                        Nome
-                    </th>
-                    <th className="SAtItem w2" >
-                        Éspecie
-                    </th>
-                    <th className="SAtItem w2" >
-                        Raça
-                    </th>
-                    <th className="SAtItem w1" >
-                        Sexo
-                    </th>
-                    <th className="SAtItem w1" >
-                        Idade
-                    </th>
-                    <th className="SAtItem w2">
-                    </th>
-                </tr>
-            </thead>
-            <tbody className="SAtBody">
-                {Animal()}
-            </tbody>
-            {
-            modal == "Editar"
-            ?<EditarAnimal data={data}/>
-            :""
-            }
-        </table>
+        <>
+            <table className="SAtable">
+
+                <thead className="SAtHead">
+                    <tr className="SAtLine">
+                        <th className="SAtItem w3" >
+                            Nome
+                        </th>
+                        <th className="SAtItem w2" >
+                            Éspecie
+                        </th>
+                        <th className="SAtItem w2" >
+                            Raça
+                        </th>
+                        <th className="SAtItem w1" >
+                            Sexo
+                        </th>
+                        <th className="SAtItem w1" >
+                            Idade
+                        </th>
+                        <th className="SAtItem w2">
+                        </th>
+                    </tr>
+                </thead>
+                <tbody className="SAtBody">
+                    {Animal()}
+                </tbody>
+
+            </table>
+            <dialog id="dEditarAnimal">
+                <EditarAnimal id="EditarAnimal" data={data} />
+            </dialog>
+            <dialog id="dEditarAnimal">
+                <EditarAnimal id="EditarAnimal" data={data} />
+            </dialog>
+            <dialog id="dEditarAnimal">
+                <EditarAnimal id="EditarAnimal" data={data} />
+            </dialog>
+
+        </>
     )
+
+
+
 }
 export default SeusAnimais

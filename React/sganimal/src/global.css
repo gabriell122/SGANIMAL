@@ -745,13 +745,22 @@ ul {
     display: block;
     background-color: var(--green-1);
     border-radius: 18px;
-    z-index: 3;
-    position: fixed; /* Posicionamento fixo para cobrir a tela */
-    z-index: 1; /* Coloque o modal na parte superior */
-    left: 0;
-    top: 350px;
-}
 
+}
+#dEditarAnimal{
+     /* Define o posicionamento absoluto */
+    position: fixed;
+    /* Centraliza horizontalmente */
+    left: 50%;
+    /* Centraliza verticalmente */
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Define as dimensões e estilos do modal */
+    background-color: #fff;
+    border-radius: 5px;
+    /* Adiciona uma sombra para efeito visual */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 .EAdTitle {
     width: 100%;
     padding-top: 36px;
@@ -841,10 +850,12 @@ ul {
 }
 
 @media screen and (max-width: 800px) {
-
+    #dEditarAnimal{
+        width: 90%;
+    }
     .EditarAnimal {
         height: 576px;
-        width: 90%;
+        width: 100%;
     }
 
     .EAdInputs {
