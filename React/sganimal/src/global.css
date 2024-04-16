@@ -747,7 +747,7 @@ ul {
     border-radius: 18px;
 
 }
-#dEditarAnimal{
+#dEditarAnimal,#dDeletarAnimal,#dDoarAnimal{
      /* Define o posicionamento absoluto */
     position: fixed;
     /* Centraliza horizontalmente */
@@ -1142,3 +1142,12 @@ tbody .SAtLine:hover {
 }
 
 /* Fexamento seus animais */
+
+
+
+
+
+
+
+
+

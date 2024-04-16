@@ -3,6 +3,8 @@ import { useState } from "react";
 import Deletar from "../../../img/svg/delet.svg";
 import Donete from "../../../img/svg/donate.svg";
 import Edit from "../../../img/svg/edit.svg";
+import DeletarAnimal from "../../forms/animal/deletar";
+import DoarAnimal from "../../forms/animal/doar";
 import EditarAnimal from "../../forms/editar/animal";
 
 const SeusAnimais = () => {
@@ -41,7 +43,6 @@ const SeusAnimais = () => {
             sexo: 1
         },
     ]
-    const [modal, setModal] = useState("")
     const [data, setData] = useState({})
     const calcularIdade = (dataNascimento) => {
         // Obtendo a data atual
@@ -68,11 +69,12 @@ const SeusAnimais = () => {
         return idade;
     }
 
-    const OpenModal = (animal)=>{
-        const dModal = document.getElementById("dEditarAnimal")
+    const OpenModal = (animal,id)=>{
+        const dModal = document.getElementById(`${id}`)
         dModal.showModal()
         setData(animal)
     }
+
     const Animal = () => {
 
         return (
@@ -103,17 +105,17 @@ const SeusAnimais = () => {
                             <td className="SAtItem">
                                 <img src={Edit} className="SAtIcon"
                                     onClick={() => {
-                                        OpenModal(animal)
+                                        OpenModal(animal, "dEditarAnimal")
                                     }}
                                 />
                                 <img src={Deletar} className="SAtIcon"
                                     onClick={() => {
-                                        console.log(animal.id)
+                                        OpenModal(animal, "dDeletarAnimal")
                                     }}
                                 />
                                 <img src={Donete} className="SAtIcon"
                                     onClick={() => {
-                                        console.log(animal.id)
+                                        OpenModal(animal, "dDoarAnimal")
                                     }}
                                 />
                             </td>
@@ -158,11 +160,11 @@ const SeusAnimais = () => {
             <dialog id="dEditarAnimal">
                 <EditarAnimal id="EditarAnimal" data={data} />
             </dialog>
-            <dialog id="dEditarAnimal">
-                <EditarAnimal id="EditarAnimal" data={data} />
+            <dialog id="dDeletarAnimal">
+                <DeletarAnimal id="DeletarAnimal" data={data}/>
             </dialog>
-            <dialog id="dEditarAnimal">
-                <EditarAnimal id="EditarAnimal" data={data} />
+            <dialog id="dDoarAnimal">
+                <DoarAnimal id="DoarAnimal" data={data}/>
             </dialog>
 
         </>
