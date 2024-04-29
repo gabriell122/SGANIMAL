@@ -747,6 +747,7 @@ ul {
     border-radius: 18px;
 
 }
+
 #dEditarAnimal,#dDeletarAnimal,#dDoarAnimal{
      /* Define o posicionamento absoluto */
     position: fixed;
@@ -1113,6 +1114,11 @@ tr.SAtLine:nth-child(odd) {
     border: 1px solid #dddddd;
     text-align: left;
     padding-left: 10px;
+}
+.SAtItem.icons{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 tbody .SAtLine:hover {
     background-color: #add8e6;

@@ -3,46 +3,51 @@ import { useState } from "react";
 import Deletar from "../../../img/svg/delet.svg";
 import Donete from "../../../img/svg/donate.svg";
 import Edit from "../../../img/svg/edit.svg";
+import ConnApi from "../../../service/conn/connApi";
 import DeletarAnimal from "../../forms/animal/deletar";
 import DoarAnimal from "../../forms/animal/doar";
 import EditarAnimal from "../../forms/editar/animal";
 
 const SeusAnimais = () => {
 
-    const animal = [
-        {
-            id: 0,
-            nome: "Mel",
-            especie: "Gato",
-            raca: "Siamês",
-            data: "2000-01-01",
-            sexo: 0
-        },
-        {
-            id: 1,
-            nome: "Amarelinho",
-            especie: "Gato",
-            raca: "Amarelo",
-            data: "2000-01-01",
-            sexo: 1
-        },
-        {
-            id: 2,
-            nome: "Preta",
-            especie: "Gato",
-            raca: "Carijo",
-            data: "2010-01-01",
-            sexo: 0
-        },
-        {
-            id: 3,
-            nome: "Betove",
-            especie: "Cachorro",
-            raca: "Vira-Lata",
-            data: "2000-01-02",
-            sexo: 1
-        },
-    ]
+
+
+    // const animal = [
+    //     {
+    //         id: 0,
+    //         nome: "Mel",
+    //         especie: "Gato",
+    //         raca: "Siamês",
+    //         data: "2000-01-01",
+    //         sexo: 0
+    //     },
+    //     {
+    //         id: 1,
+    //         nome: "Amarelinho",
+    //         especie: "Gato",
+    //         raca: "Amarelo",
+    //         data: "2000-01-01",
+    //         sexo: 1
+    //     },
+    //     {
+    //         id: 2,
+    //         nome: "Preta",
+    //         especie: "Gato",
+    //         raca: "Carijo",
+    //         data: "2010-01-01",
+    //         sexo: 0
+    //     },
+    //     {
+    //         id: 3,
+    //         nome: "Betove",
+    //         especie: "Cachorro",
+    //         raca: "Vira-Lata",
+    //         data: "2000-01-02",
+    //         sexo: 1
+    //     },
+    // ]
+    const [animal, setAnimal] = useState([])
+    const [request, setRequest] = useState(true)
     const [data, setData] = useState({})
     const calcularIdade = (dataNascimento) => {
         // Obtendo a data atual
@@ -69,11 +74,23 @@ const SeusAnimais = () => {
         return idade;
     }
 
-    const OpenModal = (animal,id)=>{
+    const OpenModal = (animal, id) => {
         const dModal = document.getElementById(`${id}`)
         dModal.showModal()
         setData(animal)
     }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await ConnApi.get(`/seusAnimais/1`);
+                setAnimal(res.data.data)
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchData()
+    }, [request])
 
     const Animal = () => {
 
@@ -83,26 +100,26 @@ const SeusAnimais = () => {
                     return (
                         <tr className="SAtLine" key={animal.id}>
                             <td className="SAtItem">
-                                {animal.nome}
+                                {animal.ani_nome}
                             </td>
 
                             <td className="SAtItem">
-                                {animal.especie}
+                                {animal.ani_especie}
                             </td>
                             <td className="SAtItem">
-                                {animal.raca}
+                                {animal.ani_raca}
                             </td>
                             <td className="SAtItem">
                                 {
-                                    animal.sexo == 0
+                                    animal.ani_sexo.data == 0
                                         ? "Fêmea"
                                         : "Macho"
                                 }
                             </td>
                             <td className="SAtItem">
-                                {calcularIdade(new Date(animal.data))} Anos
+                                {calcularIdade(new Date(animal.ani_nasc))} Anos
                             </td>
-                            <td className="SAtItem">
+                            <td className="SAtItem icons">
                                 <img src={Edit} className="SAtIcon"
                                     onClick={() => {
                                         OpenModal(animal, "dEditarAnimal")
@@ -153,18 +170,22 @@ const SeusAnimais = () => {
                     </tr>
                 </thead>
                 <tbody className="SAtBody">
-                    {Animal()}
+                    {
+                        animal
+                            ? Animal()
+                            : ""
+                    }
                 </tbody>
 
             </table>
             <dialog id="dEditarAnimal">
-                <EditarAnimal id="EditarAnimal" data={data} />
+                {/* <EditarAnimal id="EditarAnimal" data={data} set={setRequest} /> */}
             </dialog>
             <dialog id="dDeletarAnimal">
-                <DeletarAnimal id="DeletarAnimal" data={data}/>
+                <DeletarAnimal id="DeletarAnimal" data={data} set={setRequest} />
             </dialog>
             <dialog id="dDoarAnimal">
-                <DoarAnimal id="DoarAnimal" data={data}/>
+                <DoarAnimal id="DoarAnimal" data={data} set={setRequest} />
             </dialog>
 
         </>

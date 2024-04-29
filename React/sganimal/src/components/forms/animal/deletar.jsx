@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import formatDate from "../../../service/date/formatDate";
+
 const DeletarAnimal = (data) => {
     const [animal, setAnimal] = useState({
+        id: "",
         nome: "",
         data: "",
         especie: "",
@@ -10,18 +13,21 @@ const DeletarAnimal = (data) => {
     })
 
 
+    
     useEffect(() => {
         setAnimal({
-            "nome": data.data.nome,
-            "data": data.data.data,
-            "especie": data.data.especie,
-            "raca": data.data.raca,
-            "sexo": data.data.sexo
+            "id": data.data.ani_id,
+            "nome": data.data.ani_nome,
+            "data": data.data.ani_nasc,
+            "especie": data.data.ani_especie,
+            "raca": data.data.ani_raca,
+            "sexo": data.data.ani_sexo.data
         })
-    }, [data])
-
+        console.log(animal);
+    }, [animal])
 
     const DeletarAnimal = () => {
+        console.log(animal);
         console.log("Animal Excluido")
     }
 
@@ -33,7 +39,7 @@ const DeletarAnimal = (data) => {
 
     return (
         <>
-            <div className="EditarAnimal" id="EditarAnimal">
+            {/* <div className="EditarAnimal" id="EditarAnimal">
                 <div className="EAdTitle">
                     <p className="EApTitle">
                         Apagar Animal
@@ -78,7 +84,7 @@ const DeletarAnimal = (data) => {
                         onClick={() => { CloseModal() }}
                     />
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }

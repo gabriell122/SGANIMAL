@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import handleChange from "../../../../service/change/handleChange";
-
+import ConnApi from "../../../../service/conn/connApi"
 const EditarAnimal = (data) => {
 
     
@@ -15,9 +15,11 @@ const EditarAnimal = (data) => {
 
 
     useEffect(() => {
+        ani, nome, nasc, especie, sexo, raca 
         setAnimal({
+            "ani": data.data.id,
             "nome": data.data.nome,
-            "data": data.data.data,
+            "nasc": data.data.data,
             "especie": data.data.especie,
             "raca": data.data.raca,
             "sexo": data.data.sexo
@@ -25,8 +27,19 @@ const EditarAnimal = (data) => {
     }, [data])
 
 
-    const EditarAnimal = () => {
-        console.log(animal)
+    const EditarAnimal =async () => {
+        try {
+            console.log(animal);
+            const res = ConnApi.put("/editarAnimais", animal)
+            if (res.data.confirma) {
+                console.log("Animal alterado com susceso");
+                CloseModal()
+            }else{
+                console.log(res.data.data);
+            }
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     const CloseModal = ()=>{
