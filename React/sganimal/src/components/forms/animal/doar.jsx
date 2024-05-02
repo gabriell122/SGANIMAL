@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useState } from "react";
-const DoarAnimal = (data) => {
+import ConnApi from "../../../service/conn/connApi";
+import formatDate from "../../../service/date/formatDate";
+const DoarAnimal = ({ data, set }) => {
     const [animal, setAnimal] = useState({
         nome: "",
         data: "",
@@ -9,19 +11,30 @@ const DoarAnimal = (data) => {
         sexo: ""
     })
 
-
     useEffect(() => {
         setAnimal({
-            "nome": data.data.nome,
-            "data": data.data.data,
-            "especie": data.data.especie,
-            "raca": data.data.raca,
-            "sexo": data.data.sexo
-        })
+            "ani": data.ani_id,
+            "nome": data.ani_nome,
+            "nasc": data.ani_nasc,
+            "especie": data.ani_especie,
+            "raca": data.ani_raca,
+            "sexo": data.ani_sexo.data
+        });
     }, [data])
 
-
-    const DoarAnimal = () => {
+    const DoarAnimal = async() => {
+        try {
+            const res = await ConnApi.patch("/animaisDoacao", animal)
+            if (res.data.confirma) {
+                console.log("Animal enviado para doação");
+                CloseModal()
+                set(prev => !prev)
+            } else {
+                console.log(res.data.data);
+            }
+        } catch (error) {
+            console.log(error);
+        }
         console.log("Animal colocado para doação")
     }
 
@@ -47,7 +60,7 @@ const DoarAnimal = (data) => {
                         <div className="EAdDataInput">
                             <p className="EApDN">Data de nascimento</p>
                             <input type="date" readOnly className="EAinput DN n"
-                                value={animal.data}
+                                value={formatDate(animal.nasc)}
                             />
                         </div>
                     </div>

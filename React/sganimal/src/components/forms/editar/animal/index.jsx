@@ -2,9 +2,10 @@ import { useEffect } from "react";
 import { useState } from "react";
 import handleChange from "../../../../service/change/handleChange";
 import ConnApi from "../../../../service/conn/connApi"
-const EditarAnimal = (data) => {
+import formatDate from "../../../../service/date/formatDate"
+const EditarAnimal = ({ data, set }) => {
 
-    
+
     const [animal, setAnimal] = useState({
         nome: "",
         data: "",
@@ -13,28 +14,26 @@ const EditarAnimal = (data) => {
         sexo: ""
     })
 
-
     useEffect(() => {
-        ani, nome, nasc, especie, sexo, raca 
-        setAnimal({
-            "ani": data.data.id,
-            "nome": data.data.nome,
-            "nasc": data.data.data,
-            "especie": data.data.especie,
-            "raca": data.data.raca,
-            "sexo": data.data.sexo
-        })
+            setAnimal({
+              "ani": data.ani_id,
+              "nome": data.ani_nome,
+              "nasc": data.ani_nasc,
+              "especie": data.ani_especie,
+              "raca": data.ani_raca,
+              "sexo": data.ani_sexo.data
+            });
     }, [data])
 
-
-    const EditarAnimal =async () => {
+    const EditarAnimal = async () => {
         try {
             console.log(animal);
-            const res = ConnApi.put("/editarAnimais", animal)
+            const res = await ConnApi.put("/editarAnimais", animal)
             if (res.data.confirma) {
                 console.log("Animal alterado com susceso");
                 CloseModal()
-            }else{
+                set(prev => !prev)
+            } else {
                 console.log(res.data.data);
             }
         } catch (error) {
@@ -42,7 +41,7 @@ const EditarAnimal = (data) => {
         }
     }
 
-    const CloseModal = ()=>{
+    const CloseModal = () => {
         const dialog = document.getElementById("dEditarAnimal")
         dialog.close()
     }
@@ -66,9 +65,10 @@ const EditarAnimal = (data) => {
                         <p className="EApDN">Data de nascimento</p>
                         <input type="date" className="EAinput DN n"
                             onChange={
-                                (e) => { handleChange(animal, setAnimal, "data", e.target.value) }
+                                (e) => { handleChange(animal, setAnimal, "nasc", e.target.value) }
                             }
-                            value={animal.data}
+                        value={formatDate(animal.nasc)}
+
                         />
                     </div>
                 </div>

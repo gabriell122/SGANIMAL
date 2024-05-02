@@ -48,7 +48,7 @@ const SeusAnimais = () => {
     // ]
     const [animal, setAnimal] = useState([])
     const [request, setRequest] = useState(true)
-    const [data, setData] = useState({})
+    const [data, setData] = useState(null)
     const calcularIdade = (dataNascimento) => {
         // Obtendo a data atual
         var dataAtual = new Date();
@@ -179,13 +179,19 @@ const SeusAnimais = () => {
 
             </table>
             <dialog id="dEditarAnimal">
-                {/* <EditarAnimal id="EditarAnimal" data={data} set={setRequest} /> */}
+                {   
+                    data&&<EditarAnimal id="EditarAnimal" data={data} set={setRequest} />
+                }
             </dialog>
             <dialog id="dDeletarAnimal">
-                <DeletarAnimal id="DeletarAnimal" data={data} set={setRequest} />
+                {
+                    data&&<DeletarAnimal id="DeletarAnimal" data={data} set={setRequest} />
+                }
             </dialog>
             <dialog id="dDoarAnimal">
-                <DoarAnimal id="DoarAnimal" data={data} set={setRequest} />
+                {
+                    data&&<DoarAnimal id="DoarAnimal" data={data} set={setRequest} />
+                }
             </dialog>
 
         </>

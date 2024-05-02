@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import formatDate from "../../../service/date/formatDate";
 
-const DeletarAnimal = (data) => {
+const DeletarAnimal = ({ data , set }) => {
     const [animal, setAnimal] = useState({
         id: "",
         nome: "",
@@ -12,34 +12,31 @@ const DeletarAnimal = (data) => {
         sexo: ""
     })
 
-
-    
     useEffect(() => {
         setAnimal({
-            "id": data.data.ani_id,
-            "nome": data.data.ani_nome,
-            "data": data.data.ani_nasc,
-            "especie": data.data.ani_especie,
-            "raca": data.data.ani_raca,
-            "sexo": data.data.ani_sexo.data
-        })
-        console.log(animal);
-    }, [animal])
+            "ani": data.ani_id,
+            "nome": data.ani_nome,
+            "nasc": data.ani_nasc,
+            "especie": data.ani_especie,
+            "raca": data.ani_raca,
+            "sexo": data.ani_sexo.data
+        });
+    }, [data])
 
     const DeletarAnimal = () => {
-        console.log(animal);
-        console.log("Animal Excluido")
+        console.log("Animal deletado");
+        CloseModal()
+        set(prev => !prev)
     }
 
-    const CloseModal = ()=>{
+    const CloseModal = () => {
         const dialog = document.getElementById("dDeletarAnimal")
         dialog.close()
     }
 
-
     return (
         <>
-            {/* <div className="EditarAnimal" id="EditarAnimal">
+            <div className="EditarAnimal" id="EditarAnimal">
                 <div className="EAdTitle">
                     <p className="EApTitle">
                         Apagar Animal
@@ -53,7 +50,7 @@ const DeletarAnimal = (data) => {
                         <div className="EAdDataInput">
                             <p className="EApDN">Data de nascimento</p>
                             <input type="date" readOnly className="EAinput DN n"
-                                value={animal.data}
+                                value={formatDate(animal.nasc)}
                             />
                         </div>
                     </div>
@@ -64,13 +61,13 @@ const DeletarAnimal = (data) => {
                         <input type="text" readOnly className="EAinput n prs"
                             value={animal.raca}
                         />
-                        <select readOnly  className="EAselect s" defaultValue="0">
+                        <select readOnly className="EAselect s" defaultValue="0">
                             <option value="0">
                                 {
                                     animal.sexo == 0
                                         ? "Fêmea"
                                         : "Macho"
-                                    
+
                                 }
                             </option>
                         </select>
@@ -84,7 +81,7 @@ const DeletarAnimal = (data) => {
                         onClick={() => { CloseModal() }}
                     />
                 </div>
-            </div> */}
+            </div>
         </>
     )
 }
