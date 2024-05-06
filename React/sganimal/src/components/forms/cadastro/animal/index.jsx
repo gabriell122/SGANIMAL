@@ -1,6 +1,7 @@
 import { useState } from "react"
 import handleChange from "../../../../service/change/handleChange";
 import ConnApi from "../../../../service/conn/connApi";
+import { CadastroSuccess, ErrorApi, ErrorDados } from "../../../../service/swalAlert/swal";
 const CadastroAnimal = ({user}) => {
 
     const [animal, setAnimal] = useState({
@@ -15,11 +16,15 @@ const CadastroAnimal = ({user}) => {
         try {
             const res = await ConnApi.post("/cadastrarAnimal", animal)
             if (res.data.confirma) {
-                console.log("Animal cadastrado com susceso");
+                CadastroSuccess();
             } else {
-                console.log(res.data.data);
+                if (res.status(201)) {
+                    ErrorDados();
+                }
+                ErrorApi();
             }
         } catch (error) {
+            ErrorApi();
             console.log(error);
         }
     }

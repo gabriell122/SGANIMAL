@@ -8,6 +8,7 @@ import DeletarAnimal from "../../forms/animal/deletar";
 import DoarAnimal from "../../forms/animal/doar";
 import EditarAnimal from "../../forms/editar/animal";
 import CalcularIdade from "../../../service/idade/calcularIdade"
+import { ErrorApi } from "../../../service/swalAlert/swal";
 
 const SeusAnimais = () => {
 
@@ -27,6 +28,7 @@ const SeusAnimais = () => {
                 const res = await ConnApi.get(`/seusAnimais/1`);
                 setAnimal(res.data.data)
             } catch (error) {
+                ErrorApi()
                 console.log(error);
             }
         }

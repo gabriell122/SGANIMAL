@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import ConnApi from "../../../service/conn/connApi";
 import formatDate from "../../../service/date/formatDate";
+import { ErrorApi, ErrorDados } from "../../../service/swalAlert/swal";
 const DoarAnimal = ({ data, set }) => {
     const [animal, setAnimal] = useState({
         nome: "",
@@ -30,12 +31,15 @@ const DoarAnimal = ({ data, set }) => {
                 CloseModal()
                 set(prev => !prev)
             } else {
-                console.log(res.data.data);
+                if(res.status == 201){
+                    ErrorDados()
+                }
+                ErrorApi()
             }
         } catch (error) {
+            ErrorApi
             console.log(error);
         }
-        console.log("Animal colocado para doação")
     }
 
     const CloseModal = ()=>{

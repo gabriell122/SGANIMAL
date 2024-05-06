@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import CalcularIdade from "../../../service/idade/calcularIdade";
 import ConnApi from "../../../service/conn/connApi"
+import { AdocaoSuccess, ErrorApi, ErrorDados } from "../../../service/swalAlert/swal";
 const AdotarAnimal = ({ data, set ,user}) => {
 
     const [animal, setAnimal] = useState({
@@ -40,13 +41,17 @@ const AdotarAnimal = ({ data, set ,user}) => {
         try {
             const res = await ConnApi.patch("/animaisAdotar", animal)
             if (res.data.confirma) {
-                console.log("Animal adotado");
-                CloseModal()
+                AdocaoSuccess();
+                CloseModal();
                 set(prev => !prev)
             } else {
-                console.log(res.data.data);
+                if (res.status == 201) {
+                    ErrorDados();
+                }
+                ErrorApi();
             }
         } catch (error) {
+            ErrorApi();
             console.log(error);
         }
     }

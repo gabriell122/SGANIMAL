@@ -4,7 +4,7 @@ import NavHome from "../../components/nav/navHome"
 import SeusAnimais from "../../components/table/seusAnimais"
 import AnimalAdocao from "../../components/table/animalAdocao"
 import { useEffect } from "react"
-import { useNavigate, useRouteError } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 const HomeUser = ({user}) => {
     const navigate = useNavigate()
     const [ form , setForm] = useState("Seus")

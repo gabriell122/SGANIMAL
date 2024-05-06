@@ -3,9 +3,9 @@ import {BrowserRouter , Routes, Route} from "react-router-dom";
 import Home from "./page/home/index.jsx";
 import HomeUser from "./page/usuario/index.jsx";
 import "./reset.css"
+import "./global.css"
 function App() {
   const [user, setUser] = useState()
-  useEffect(()=>{console.log(user);},[user])
   return (
     <BrowserRouter>
       <Routes>

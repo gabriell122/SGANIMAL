@@ -3,6 +3,7 @@ import { useState } from "react";
 import handleChange from "../../../../service/change/handleChange";
 import ConnApi from "../../../../service/conn/connApi"
 import formatDate from "../../../../service/date/formatDate"
+import { ErrorApi, ErrorDados } from "../../../../service/swalAlert/swal";
 const EditarAnimal = ({ data, set }) => {
 
 
@@ -33,9 +34,13 @@ const EditarAnimal = ({ data, set }) => {
                 CloseModal()
                 set(prev => !prev)
             } else {
-                console.log(res.data.data);
+                if(res.status == 201){
+                    ErrorDados
+                }
+                ErrorApi()
             }
         } catch (error) {
+            ErrorApi();
             console.log(error);
         }
     }

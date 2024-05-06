@@ -4,6 +4,7 @@ import adotar from "../../../img/svg/animal.svg"
 import ConnApi from "../../../service/conn/connApi";
 import AdotarAnimal from "../../../components/forms/adotarAnimal"
 import CalcularIdade from "../../../service/idade/calcularIdade"
+import { ErrorApi } from "../../../service/swalAlert/swal";
 
 const AnimalAdocao = ({user}) => {
     const [animal, setAnimal] = useState([])
@@ -16,6 +17,7 @@ const AnimalAdocao = ({user}) => {
                 const res = await ConnApi.get("/animaisAdocao")
                 setAnimal(res.data.data)
             } catch (error) {
+                ErrorApi();
                 console.log(error);
             }
         }

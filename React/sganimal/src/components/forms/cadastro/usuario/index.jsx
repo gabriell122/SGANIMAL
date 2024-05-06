@@ -1,6 +1,7 @@
 import { useState } from "react"
 import handleChange from "../../../../service/change/handleChange"
 import ConnApi from "../../../../service/conn/connApi"
+import { CadastroSuccess, EmailDuplicado, ErrorApi, ErrorDados } from "../../../../service/swalAlert/swal"
 const CadastroUsuario = ({ set }) => {
     const [form, setForm] = useState("0")
     const [user, setUser] = useState({
@@ -15,17 +16,26 @@ const CadastroUsuario = ({ set }) => {
         cidade: "",
         estado: ""
     })
-    const CadastrarUsuario = async ()=>{
+    const CadastrarUsuario = async () => {
         try {
             console.log(user);
             const res = await ConnApi.post("/cadastrarUsuario", user);
             if (res.data.confirma) {
                 console.log("cadastro realizado com sus");
+                CadastroSuccess()
                 set("Login")
-            }else{
-                console.log(res.data.data)
+            } else {
+
+                if (res.status == 201) {
+                    ErrorDados()
+                }
+                if (res.status == 202) {
+                    EmailDuplicado()
+                }
+                ErrorApi()
             }
         } catch (error) {
+            ErrorApi()
             console.log(error);
         }
     }

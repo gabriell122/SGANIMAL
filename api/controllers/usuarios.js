@@ -61,13 +61,13 @@ module.exports = {
           })
 
         } else {
-          return response.status(201).json({
+          return response.status(202).json({
             confirma: false,
             message: "Email já Cadastrado",
           })
         }
       } else {
-        return response.status(502).json({
+        return response.status(201).json({
           confirma: false,
           message: "Campo Nulo",
         })
