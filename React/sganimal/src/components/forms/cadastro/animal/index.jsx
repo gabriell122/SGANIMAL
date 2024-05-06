@@ -1,14 +1,15 @@
 import { useState } from "react"
 import handleChange from "../../../../service/change/handleChange";
 import ConnApi from "../../../../service/conn/connApi";
-const CadastroAnimal = () => {
+const CadastroAnimal = ({user}) => {
 
     const [animal, setAnimal] = useState({
         nome: "",
-        data: "",
+        nasc: "",
         especie: "",
         raca: "",
-        sexo: ""
+        sexo: "",
+        dono: user.usu_id
     })
     const CadastrarAnimal = async () => {
         try {
@@ -46,7 +47,7 @@ const CadastroAnimal = () => {
                             type="date"
                             className="CAinput DN n"
                             onChange={
-                                (e) => { handleChange(animal, setAnimal, "data", e.target.value) }
+                                (e) => { handleChange(animal, setAnimal, "nasc", e.target.value) }
                             }
                             value={animal.data}
                         />

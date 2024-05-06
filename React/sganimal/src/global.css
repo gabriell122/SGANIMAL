@@ -748,7 +748,7 @@ ul {
 
 }
 
-#dEditarAnimal,#dDeletarAnimal,#dDoarAnimal{
+#dEditarAnimal,#dDeletarAnimal,#dDoarAnimal,#dAdotarAnimal{
      /* Define o posicionamento absoluto */
     position: fixed;
     /* Centraliza horizontalmente */

@@ -2,7 +2,7 @@ import Login from "../../components/forms/login";
 import Nav from "../../components/nav";
 import CadastroUsuario from "../../components/forms/cadastro/usuario"
 import { useState } from "react";
-const Home = ()=>{
+const Home = ({setUser})=>{
     const [form , setForm] = useState("Login")
     return(
         <div className="Body">
@@ -10,7 +10,7 @@ const Home = ()=>{
             <div className="Main">
                 {
                     form == "Login"
-                    ?<Login set = {setForm}/>
+                    ?<Login set = {setForm} setUsuario={setUser}/>
                     :<CadastroUsuario set = {setForm}/>
                 }
             </div>

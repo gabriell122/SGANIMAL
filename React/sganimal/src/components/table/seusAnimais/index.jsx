@@ -7,72 +7,13 @@ import ConnApi from "../../../service/conn/connApi";
 import DeletarAnimal from "../../forms/animal/deletar";
 import DoarAnimal from "../../forms/animal/doar";
 import EditarAnimal from "../../forms/editar/animal";
+import CalcularIdade from "../../../service/idade/calcularIdade"
 
 const SeusAnimais = () => {
 
-
-
-    // const animal = [
-    //     {
-    //         id: 0,
-    //         nome: "Mel",
-    //         especie: "Gato",
-    //         raca: "Siamês",
-    //         data: "2000-01-01",
-    //         sexo: 0
-    //     },
-    //     {
-    //         id: 1,
-    //         nome: "Amarelinho",
-    //         especie: "Gato",
-    //         raca: "Amarelo",
-    //         data: "2000-01-01",
-    //         sexo: 1
-    //     },
-    //     {
-    //         id: 2,
-    //         nome: "Preta",
-    //         especie: "Gato",
-    //         raca: "Carijo",
-    //         data: "2010-01-01",
-    //         sexo: 0
-    //     },
-    //     {
-    //         id: 3,
-    //         nome: "Betove",
-    //         especie: "Cachorro",
-    //         raca: "Vira-Lata",
-    //         data: "2000-01-02",
-    //         sexo: 1
-    //     },
-    // ]
     const [animal, setAnimal] = useState([])
     const [request, setRequest] = useState(true)
     const [data, setData] = useState(null)
-    const calcularIdade = (dataNascimento) => {
-        // Obtendo a data atual
-        var dataAtual = new Date();
-
-        // Obtendo a data de nascimento do usuário
-        var anoNascimento = dataNascimento.getFullYear();
-        var mesNascimento = dataNascimento.getMonth();
-        var diaNascimento = dataNascimento.getDate();
-
-        // Obtendo a data atual
-        var anoAtual = dataAtual.getFullYear();
-        var mesAtual = dataAtual.getMonth();
-        var diaAtual = dataAtual.getDate();
-
-        // Calculando a idade
-        var idade = anoAtual - anoNascimento;
-
-        // Verificando se o aniversário já ocorreu este ano
-        if (mesAtual < mesNascimento || (mesAtual === mesNascimento && diaAtual < diaNascimento)) {
-            idade--;
-        }
-
-        return idade;
-    }
 
     const OpenModal = (animal, id) => {
         const dModal = document.getElementById(`${id}`)
@@ -117,7 +58,7 @@ const SeusAnimais = () => {
                                 }
                             </td>
                             <td className="SAtItem">
-                                {calcularIdade(new Date(animal.ani_nasc))} Anos
+                                {CalcularIdade(new Date(animal.ani_nasc))} Anos
                             </td>
                             <td className="SAtItem icons">
                                 <img src={Edit} className="SAtIcon"

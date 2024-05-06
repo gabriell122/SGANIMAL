@@ -1,11 +1,18 @@
 import { useState } from "react"
-import AdotarAnimal from "../../components/forms/adotarAnimal"
 import CadastroAnimal from "../../components/forms/cadastro/animal"
 import NavHome from "../../components/nav/navHome"
 import SeusAnimais from "../../components/table/seusAnimais"
-
-const HomeUser = () => {
+import AnimalAdocao from "../../components/table/animalAdocao"
+import { useEffect } from "react"
+import { useNavigate, useRouteError } from "react-router-dom"
+const HomeUser = ({user}) => {
+    const navigate = useNavigate()
     const [ form , setForm] = useState("Seus")
+    useEffect(()=>{
+        if (!user) {
+            navigate("/")
+        }
+    },[])
     return (
         <div className="Body">
             <NavHome
@@ -17,9 +24,9 @@ const HomeUser = () => {
                     form == "Seus"
                     ?<SeusAnimais/>
                     :form == "Novo"
-                    ?<CadastroAnimal/>
+                    ?<CadastroAnimal user={user}/>
                     :form == "Adotar"
-                    ?<AdotarAnimal/>
+                    ?<AnimalAdocao user={user}/>
                     :""
                 }
             </div>

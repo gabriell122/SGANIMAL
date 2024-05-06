@@ -13,16 +13,7 @@ router.put("/editarAnimais", animal.editarAnimais);
 router.get("/animaisAdocao", animal.animaisAdocao);
 router.patch("/animaisDoacao", animal.animaisDoacao);
 router.patch("/animaisAdotar", animal.animaisAdotar);
-
-
-
-
-
-//vendo
-
-
-
-//Revisar
+router.patch("/deletarAnimal", animal.deletarAnimais);
 
 
 module.exports = router;

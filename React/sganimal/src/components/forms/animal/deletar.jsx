@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import formatDate from "../../../service/date/formatDate";
-
+import ConnApi from "../../../service/conn/connApi";
 const DeletarAnimal = ({ data , set }) => {
     const [animal, setAnimal] = useState({
         id: "",
@@ -23,10 +23,20 @@ const DeletarAnimal = ({ data , set }) => {
         });
     }, [data])
 
-    const DeletarAnimal = () => {
-        console.log("Animal deletado");
-        CloseModal()
-        set(prev => !prev)
+    const DeletarAnimal = async() => {
+        try {
+            const res = await ConnApi.patch("/deletarAnimal", animal)
+            if (res.data.confirma) {
+                console.log("Animal deletado");
+                CloseModal()
+                set(prev => !prev)
+            } else {
+                console.log(res.data.data);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+        
     }
 
     const CloseModal = () => {

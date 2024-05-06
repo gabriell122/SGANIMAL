@@ -27,7 +27,6 @@ const EditarAnimal = ({ data, set }) => {
 
     const EditarAnimal = async () => {
         try {
-            console.log(animal);
             const res = await ConnApi.put("/editarAnimais", animal)
             if (res.data.confirma) {
                 console.log("Animal alterado com susceso");

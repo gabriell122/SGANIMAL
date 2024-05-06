@@ -1,18 +1,23 @@
 import { useState } from "react"
 import ConnApi from "../../../service/conn/connApi"
 import handleChange from "../../../service/change/handleChange"
-const Login = ({set})=>{
+import { useNavigate } from "react-router-dom"
+const Login = ({set , setUsuario})=>{
+
+    const navigate = useNavigate();
 
     const [ user , setUser] = useState({
         email:"",
         pass:""
     })
+
     const Login = async ()=>{
-        console.log(user);
         try {
             const res = await ConnApi.post("login", user)
             if (res.data.confirma) {
-                console.log("Logado com sus");
+                console.log("logado com susceso");
+                setUsuario(res.data.data)
+                navigate("/home");
             }else{
                 console.log(res.data.data);
             }
