@@ -35,7 +35,7 @@ const EditarAnimal = ({ data, set }) => {
                 set(prev => !prev)
             } else {
                 if(res.status == 201){
-                    ErrorDados
+                    ErrorDados()
                 }
                 ErrorApi()
             }

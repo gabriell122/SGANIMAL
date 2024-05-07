@@ -2,7 +2,7 @@ import { useState } from "react"
 import ConnApi from "../../../service/conn/connApi"
 import handleChange from "../../../service/change/handleChange"
 import { useNavigate } from "react-router-dom"
-import { ErrorApi, ErrorDados } from "../../../service/swalAlert/swal"
+import { ErrorApi, ErrorDados, LoginError } from "../../../service/swalAlert/swal"
 const Login = ({set , setUsuario})=>{
 
     const navigate = useNavigate();
@@ -20,11 +20,12 @@ const Login = ({set , setUsuario})=>{
                 setUsuario(res.data.data)
                 navigate("/home");
             }else{
-
                 if(res.status == 201){
                     ErrorDados()
                 }
-                ErrorApi()
+                if(res.status == 202){
+                    LoginError()
+                }
             }
         } catch (error) {
             ErrorApi()

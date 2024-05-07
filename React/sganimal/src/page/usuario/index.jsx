@@ -22,7 +22,7 @@ const HomeUser = ({user}) => {
             
                 {
                     form == "Seus"
-                    ?<SeusAnimais/>
+                    ?<SeusAnimais user={user}/>
                     :form == "Novo"
                     ?<CadastroAnimal user={user}/>
                     :form == "Adotar"

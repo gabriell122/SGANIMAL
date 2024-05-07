@@ -10,7 +10,7 @@ import EditarAnimal from "../../forms/editar/animal";
 import CalcularIdade from "../../../service/idade/calcularIdade"
 import { ErrorApi } from "../../../service/swalAlert/swal";
 
-const SeusAnimais = () => {
+const SeusAnimais = ({user}) => {
 
     const [animal, setAnimal] = useState([])
     const [request, setRequest] = useState(true)
@@ -25,7 +25,7 @@ const SeusAnimais = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await ConnApi.get(`/seusAnimais/1`);
+                const res = await ConnApi.get(`/seusAnimais/${user.usu_id}`);
                 setAnimal(res.data.data)
             } catch (error) {
                 ErrorApi()

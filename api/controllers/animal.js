@@ -65,7 +65,7 @@ module.exports = {
 
     async animaisAdocao(request, response) {
         try {
-            const sqlAdocao = "SELECT usa.ani_id,usu.usu_nome,usu.usu_telefone,usu.usu_email, ani.ani_id, ani_nome, DATE_FORMAT(ani_nasc, '%d-%m-%Y') AS ani_nasc, ani_especie, ani_sexo, ani_raca FROM animais ani INNER JOIN usuariosanimais usa ON usa.ani_id = ani.ani_id INNER JOIN usuarios usu ON usu.usu_id = usa.usu_id WHERE ani.ani_status = 1 AND usa.usa_status = 0;";
+            const sqlAdocao = "SELECT usa.usu_id,usu.usu_nome,usu.usu_telefone,usu.usu_email, ani.ani_id, ani_nome, DATE_FORMAT(ani_nasc, '%d-%m-%Y') AS ani_nasc, ani_especie, ani_sexo, ani_raca FROM animais ani INNER JOIN usuariosanimais usa ON usa.ani_id = ani.ani_id INNER JOIN usuarios usu ON usu.usu_id = usa.usu_id WHERE ani.ani_status = 1 AND usa.usa_status = 0;";
             const res = await db.query(sqlAdocao);
             return response.status(200).json({
                 confirma: true,

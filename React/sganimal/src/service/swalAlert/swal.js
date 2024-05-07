@@ -50,13 +50,22 @@ const EmailDuplicado = () => {
     });
 }
 
-const AdocaoSuccess = ()=>{
+const AdocaoSuccess = () => {
     Swal.fire({
         icon: 'success',
         title: 'Adoção realizada com sucesso!',
         text: 'Parabéns! Você adotou um novo amigo. Desejamos a você e ao seu novo companheiro muitas felicidades juntos!',
         confirmButtonText: 'OK'
-      });
+    });
 }
 
-export { ErrorApi, CadastroSuccess, ErrorDados, ExcluirAnimal, EmailDuplicado, AdocaoSuccess } 
+const LoginError = () => {
+    Swal.fire({
+        icon: 'error',
+        title: 'Login mal sucedido',
+        text: 'O email ou senha inseridos estão incorretos. Por favor, verifique suas credenciais e tente novamente.',
+        confirmButtonText: 'OK'
+    });
+}
+
+export { ErrorApi, CadastroSuccess, ErrorDados, ExcluirAnimal, EmailDuplicado, AdocaoSuccess ,LoginError} 

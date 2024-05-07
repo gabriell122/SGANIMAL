@@ -37,7 +37,7 @@ const DoarAnimal = ({ data, set }) => {
                 ErrorApi()
             }
         } catch (error) {
-            ErrorApi
+            ErrorApi()
             console.log(error);
         }
     }

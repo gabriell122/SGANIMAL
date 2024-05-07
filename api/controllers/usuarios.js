@@ -17,14 +17,14 @@ module.exports = {
             data: resEntrar[0][0]
           })
         } else {
-          return response.status(201).json({
+          return response.status(202).json({
             confirma: false,
             message: "login/dadosincorretos",
             data: "Email ou Senha Incorretos"
           })
         }
       } else {
-        return response.status(202).json({
+        return response.status(201).json({
           confirma: false,
           message: "email ou senha nulos"
         })
