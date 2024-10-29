@@ -1,7 +1,10 @@
+//dependencias
+import { useState } from "react";
+//componentes
 import Login from "../../components/forms/login";
 import Nav from "../../components/nav";
 import CadastroUsuario from "../../components/forms/cadastro/usuario"
-import { useState } from "react";
+
 const Home = ({setUser})=>{
     const [form , setForm] = useState("Login")
     return(

@@ -2,43 +2,43 @@ const Nav = ({set}) => {
 
 
     return (
-        <nav class="Nav">
-            <div class="NdAll">
-                <div class="NdLeft">
-                    <div class="NdTitle">
-                        <p class="NpTitle">
+        <nav className="Nav">
+            <div className="NdAll">
+                <div className="NdLeft">
+                    <div className="NdTitle">
+                        <p className="NpTitle">
                             SGA
                         </p>
                     </div>
-                    <div class="NdName">
-                        <p class="NpName">
+                    <div className="NdName">
+                        <p className="NpName">
                             Sistema de Gerenciamento Animal
                         </p>
                     </div>
                 </div>
-                <div class="NdRight">
-                    <div class="NdButton Registrar">
+                <div className="NdRight">
+                    <div className="NdButton Registrar">
                         <input 
                             type="button" 
                             value="Registrar-se" 
-                            class="NiButton" 
+                            className="NiButton" 
                             onClick={()=>{set("Cadastrar")}}
                         />
                     </div>
-                    <div class="NdButton Entrar">
+                    <div className="NdButton Entrar">
                         <input 
                             type="button" 
                             value="Entrar" 
-                            class="NiButton" 
+                            className="NiButton" 
                             onClick={()=>{set("Login")}}
                         />
                     </div>
-                    <div class="NdButton Sobre">
-                        <input type="button" value="Sobre" class="NiButton" />
+                    <div className="NdButton Sobre">
+                        <input type="button" value="Sobre" className="NiButton" />
                     </div>
                 </div>
-                <div class="NdRLast">
-                    <i class="fas fa-envelope"></i>
+                <div className="NdRLast">
+                    <i className="fas fa-envelope"></i>
                 </div>
             </div>
         </nav>

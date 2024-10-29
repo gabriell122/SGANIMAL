@@ -37,7 +37,7 @@ const AnimalAdocao = ({user}) => {
         return (
             animal.map((animal) => {
                 return (
-                    <tr className="SAtLine">
+                    <tr className="SAtLine" key={animal.ani_id}>
                         <td className="SAtItem">
                             {animal.ani_nome}
                         </td>

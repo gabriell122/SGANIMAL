@@ -41,7 +41,7 @@ const SeusAnimais = ({user}) => {
             animal.map(
                 animal => {
                     return (
-                        <tr className="SAtLine" key={animal.id}>
+                        <tr className="SAtLine" key={animal.ani_id}>
                             <td className="SAtItem">
                                 {animal.ani_nome}
                             </td>
