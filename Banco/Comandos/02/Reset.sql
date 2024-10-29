@@ -1,13 +1,11 @@
-DROP TABLE usuariosAnimais, animais, usuarios, enderecos;
+DROP TABLE IF EXISTS usuariosAnimais, animais, usuarios, enderecos;
 CREATE TABLE enderecos(
     end_id INT PRIMARY KEY AUTO_INCREMENT,
     end_rua VARCHAR(128) NOT NULL,
     end_num VARCHAR(7) NOT NULL,
     end_bairo VARCHAR(128) NOT NULL,
     end_cidade VARCHAR(128) NOT NULL,
-    end_estado VARCHAR(128) NOT NULL,
-    end_cep VARCHAR(8) NOT NULL
-
+    end_estado VARCHAR(128) NOT NULL
 );
 
 CREATE TABLE usuarios(
@@ -41,3 +39,62 @@ CREATE TABLE usuariosAnimais(
     FOREIGN KEY (ani_id) REFERENCES animais(ani_id)
 );
 
+CREATE PROCEDURE stp_CadastrarAnimal
+	@dono 
+    @nome 
+    @nasc 
+    @especie 
+    @sexo
+    @raca
+AS
+BEGIN
+	INSERT INTO animais(
+        IN ani_nome VARCHAR(128), 
+        IN ani_nasc DATE, ani_especie VARCHAR(128), 
+        IN ani_sexo BIT, 
+        IN ani_raca VARCHAR(128)
+    ) 
+    VALUES( 
+        @nome, 
+        @nasc, 
+        @especie, 
+        @sexo, 
+        @raca
+    );
+    INSERT INTO usuariosAnimais( 
+        usu_id, 
+        ani_id, 
+        usa_data
+    ) 
+    VALUES( 
+        @dono, 
+        LAST_INSERT_ID(), 
+        CURRENT_TIMESTAMP 
+    );
+END;
+DELIMITER //
+
+CREATE PROCEDURE stp_CadastrarAnimal (
+    IN dono INT,
+    IN nome VARCHAR(128),
+    IN nasc DATE,
+    IN especie VARCHAR(128),
+    IN sexo BIT,
+    IN raca VARCHAR(128)
+)
+BEGIN
+    -- Insere o animal na tabela 'animais'
+    INSERT INTO animais (ani_nome, ani_nasc, ani_especie, ani_sexo, ani_raca)
+    VALUES (nome, nasc, especie, sexo, raca);
+
+    -- Insere o relacionamento na tabela 'usuariosAnimais' usando o ID do último registro inserido
+    INSERT INTO usuariosAnimais (usu_id, ani_id, usa_data)
+    VALUES (dono, LAST_INSERT_ID(), CURRENT_TIMESTAMP);
+END //
+
+DELIMITER ;
+DROP PROCEDURE stp_CadastrarAnimal;
+CREATE PROCEDURE stp_CadastrarAnimal ()
+BEGIN
+   SELECT * FROM animais
+END 

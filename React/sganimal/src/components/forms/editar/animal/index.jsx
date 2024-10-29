@@ -95,13 +95,13 @@ const EditarAnimal = ({ data, set }) => {
                         }
                         value={
                             animal.sexo == 0
-                                ? 2
+                                ? 0
                                 : 1
                         }
                     >
-                        <option value="0" hidden>Sexo</option>
+                        <option value="2" hidden>Sexo</option>
                         <option value="1">Macho</option>
-                        <option value="2">Fêmea</option>
+                        <option value="0">Fêmea</option>
                     </select>
                 </div>
             </div>

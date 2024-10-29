@@ -82,11 +82,11 @@ const CadastroAnimal = ({user}) => {
                         onChange={
                             (e) => { handleChange(animal, setAnimal, "sexo", e.target.value) }
                         }
-                        value={animal.sexo ?? "0"}
+                        value={animal.sexo ?? "2"}
                     >
-                        <option value="0" hidden>Sexo</option>
+                        <option value="2" hidden>Sexo</option>
                         <option value="1">Macho</option>
-                        <option value="2">Fêmea</option>
+                        <option value="0">Fêmea</option>
                     </select>
                 </div>
             </div>

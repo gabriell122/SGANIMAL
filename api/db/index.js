@@ -5,7 +5,7 @@ const bd_porta = '3306'; // porta padrao
 const bd_usuario = 'root';
 const bd_senha = '';
 const bd_servidor = 'localhost';
-const bd_banco = 'sganimal';
+const bd_banco = 'sga';
 
 
 

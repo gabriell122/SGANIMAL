@@ -40,32 +40,29 @@ module.exports = {
   async cadastrarUsuario(request, response) {
     try {
       const { email, pass, nome, telefone, nascimento, rua, num, bairo, cidade, estado} = request.body;
-      console.log(request.body);
+      
       if (email && pass && nome && telefone && nascimento && rua && num && bairo && cidade && estado ) {
-        sqlEmail = "SELECT EXISTS(SELECT 1 FROM usuarios WHERE usu_email = ?) AS email;";
-        const resEmail = await db.query(sqlEmail, [email]);
-        if (!resEmail[0][0].email) {
-          const sqlEndereco = "INSERT INTO enderecos( end_rua, end_num, end_bairo, end_cidade, end_estado) VALUES ( ?, ?, ?, ?, ? )";
-          const resCadastrarEndereco = await db.query(sqlEndereco , [ rua, num, bairo, cidade, estado]);
-          const end = resCadastrarEndereco[0].insertId;
-
-          const sqlCadastrar = "INSERT INTO usuarios( usu_nome, usu_email, usu_senha, usu_telefone, usu_nascimento, end_id) VALUES ( ?, ?, ?, ?, ?, ? )";
-          const resCadastrar = await db.query(sqlCadastrar, [nome, email, pass, telefone, nascimento, end ]);
+        const sql = "CALL stp_CadastrarUsuarios( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, @resposta)";
+        const res = await db.query(sql, [rua , num, bairo, cidade, estado, nome, email, pass, telefone, nascimento,]);
+        const [rows] = await db.query('SELECT @resposta AS resposta;');
+        if (rows[0].resposta == "1") {
           return response.status(200).json({
             confirma: true,
             message: "Usuario Cadastrado com Susceso",
             data: {
-              user: resCadastrar,
-              end: resCadastrarEndereco
+              res: res ,
+              rows:rows
+  
             }
           })
-
         } else {
-          return response.status(202).json({
+          return response.status(200).json({
             confirma: false,
-            message: "Email já Cadastrado",
+            message: "Email Já Cadastrado",
           })
         }
+        
+
       } else {
         return response.status(201).json({
           confirma: false,
